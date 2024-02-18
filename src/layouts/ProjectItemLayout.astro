@@ -1,0 +1,58 @@
+---
+import { type projectSchema } from "../content/config";
+import BaseLayout from "./BaseLayout.astro";
+import dayjs from "dayjs";
+import localizedFormat from "dayjs/plugin/localizedFormat";
+
+export interface Props extends projectSchema {}
+
+const {
+  title,
+  description,
+  updatedDate,
+  images,
+  coverImage,
+  badge,
+  custom_link,
+  custom_link_label,
+} = Astro.props;
+
+dayjs.extend(localizedFormat);
+const displayDate = dayjs(updatedDate).format("ll");
+import { Image } from "astro:assets";
+---
+
+<BaseLayout title={title} description={description} image={coverImage}>
+  <main class="md:flex md:justify-center">
+    <article class="prose prose-lg max-w-[750px] prose-img:mx-auto">
+      <div class="mb-4">
+        <h1 class="title my-2 text-4xl font-bold flex items-center">
+          {title}
+          {badge && <div class="badge badge-secondary mx-2">{badge}</div>}
+        </h1>
+      </div>
+
+      <slot />
+
+      <div class="flex place-content-between items-center">
+        {
+          custom_link && (
+            <a class="text-teal-600 font-bold italic no-underline" href={custom_link} target="_blank">
+              {custom_link_label}
+            </a>
+          )
+        }
+      </div>
+
+      {images && (
+        <div>
+          {
+            images.map((image) => (
+              <Image width={750} height={422} format="webp" src={image} alt={title} />
+            ))
+          }
+        </div>)
+      }
+    </article>
+  </main>
+</BaseLayout>
