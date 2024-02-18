@@ -1,3 +1,122 @@
-.time-line-container>div:last-child .education__time>.education__line {
-    display: none;
+:root {
+  --filter: contrast(.4) brightness(1.8) blur(2px);
+}
+
+body {
+  @apply font-serif text-stone-800;
+}
+main {
+  @apply lg:min-h-[85vh] min-h-[80vh];
+}
+
+
+/* HERO SLIDESHOW */
+#hero-section {
+  @apply fixed top-0 left-0 right-0 h-screen flex transition-transform duration-1000 ease-in-out;
+}
+#hero-section .image {
+  @apply h-screen w-screen bg-center bg-cover flex-1;
+  min-width: 100vw;
+}
+
+
+/* SIDEBAR */
+aside {
+  /* @apply bg-neutral-200; */
+  @apply lg:bg-transparent transition-colors;
+  /* @apply backdrop-blur-md; */
+  /* @apply bg-gradient-to-r from-white/40 to-transparent; */
+  width: min-content !important;
+  backdrop-filter: var(--filter);
+  user-select: none;
+  text-shadow: 0 0 2px #fff3;
+}
+aside ul.menu {
+  @apply p-0 grow shrink font-sans font-semibold text-gray-600;
+}
+aside ul.menu li a {
+  @apply text-gray-700 rounded-none border-l-4 border-transparent py-2 md:py-1 px-6 text-base transition-colors;
+}
+aside ul.menu li a.active,
+aside ul.menu li a:hover {
+  @apply border-teal-600 font-black;
+  color: black !important;
+  background-color: transparent !important;
+}
+
+aside svg {
+  fill: theme("colors.gray.700");
+  @apply transition-colors;
+}
+aside svg:hover {
+  fill: theme("colors.gray.500");
+}
+
+/* MOBILE HEADER */
+#mobile-header {
+  @apply bg-gradient-to-b from-white/20 to-white/50 shadow-sm;
+  backdrop-filter: var(--filter);
+  @apply sticky lg:hidden top-0 z-30 flex h-16 w-full justify-center transition-all duration-100;
+  text-shadow: 0 0 2px #fff5;
+}
+#mobile-header a.btn-ghost:hover {
+  background: none;
+}
+.drawer-toggle:checked ~ .drawer-side > .drawer-overlay {
+  @apply bg-black/50 transition-colors;
+}
+
+/* PROJECTs */
+body.projects .projects-container {
+  @apply gap-8;
+}
+
+.projects-container:has(.card:hover) .card:not(:hover) > * {
+  @apply transition ease-linear delay-300;
+}
+.projects-container:has(.card:hover) .card:not(:hover) {
+  @apply opacity-50; 
+}
+.projects-container:has(.card:hover) .card:not(:hover) h1 {
+  @apply opacity-0;
+}
+
+.card {
+  @apply transition duration-200 ease-in items-center;
+  @apply p-0 z-10 md:w-[calc(50%-2rem)];
+}
+.card a,
+.card a .card-content {
+  @apply h-full;
+} 
+.card a .card-content {
+  @apply flex flex-col justify-center;
+}
+.card h1 {
+  @apply transition-opacity duration-500 ease-in;
+}
+
+.divider::before, .divider::after {
+  background: none !important;
+}
+
+
+/* BIO */
+.bio-section {
+  @apply flex gap-12 items-center lg:items-end lg:flex-row flex-col;
+}
+.bio-section > * {
+  @apply flex-1;
+}
+.bio-section .text-container p {
+  width: max-content;
+}
+.bio-section .text-container {
+  @apply w-min flex flex-col mx-auto my-[12%];
+}
+
+
+/* FOOTER */
+footer > * {
+  position: relative;
 }
