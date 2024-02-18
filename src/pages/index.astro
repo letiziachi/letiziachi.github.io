@@ -1,0 +1,59 @@
+---
+// import astroConfig from "astro.config.mjs";
+import BaseLayout from "../layouts/BaseLayout.astro";
+---
+
+<BaseLayout sideBarActiveItemID="home">
+  <div id="hero-section">
+    <div class="image" style="background-image: url(/homepage-1.jpg)"></div>
+    <div class="image" style="background-image: url(/homepage-2.jpg)"></div>
+    <div class="image" style="background-image: url(/homepage-3.jpg)"></div>
+    <div class="image" style="background-image: url(/homepage-4.jpg)"></div>
+    <div class="image" style="background-image: url(/homepage-5.jpg)"></div>
+    <div class="image" style="background-image: url(/homepage-6.jpg)"></div>
+  </div>
+
+<script>
+  const images = document.querySelectorAll("#hero-section>div.image");
+  const duration = 4000;
+  
+  var animating = true;
+  var currentIndex = 0;
+  let newIndex;
+  
+  function setBackground(number) {
+    var hero = document.getElementById("hero-section");
+    
+    if(hero) {
+      hero.style = `transform: translateX(${-number * 100}%)`;
+    }
+  }
+  
+  function changeBackgroundImage() {
+    if(animating) {
+      setBackground(currentIndex);
+      currentIndex = (currentIndex + 1) % images?.length;
+    }
+  }
+  
+  document.getElementById("prev").addEventListener("click", () => {
+    animating = false;
+    newIndex = currentIndex > 0 ? (currentIndex - 1) : images.length - 1;
+    setBackground(newIndex);
+    currentIndex = newIndex;
+  });
+
+  document.getElementById("next").addEventListener("click", () => {
+    animating = false;
+    newIndex = currentIndex < images.length - 1 ? (currentIndex + 1) : 0;
+    setBackground(newIndex);
+    currentIndex = newIndex;
+  });
+
+  // Timeout for slideshow
+  setInterval(changeBackgroundImage, duration);
+  // Initial background image
+  setTimeout(changeBackgroundImage, duration);
+</script>
+
+</BaseLayout>

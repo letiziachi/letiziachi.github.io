@@ -1,0 +1,54 @@
+---
+const { sideBarActiveItemID, locale = Astro.currentLocale } = Astro.props;
+import { getLocaleByPath, getRelativeLocaleUrl } from "astro:i18n";
+---
+
+<div class="font-serif p-6 grow flex flex-col justify-center">
+  <a data-astro-reload
+    href={getRelativeLocaleUrl(locale, "/")}
+    class="text-teal-700 font-bold text-3xl name"
+  >
+    Letizia <br />
+    Chianello
+  </a>
+
+  { locale === 'it' && 
+    <h5 class="italic text-xl mt-4">
+      Direttrice artistica, <br />
+      Fotografa
+    </h5>
+  } { locale === 'es' &&
+    <h5 class="italic text-xl mt-4">
+      Directora artística, <br />
+      Fotógrafo
+    </h5>
+  }
+</div>
+
+<ul class="menu menu-md overflow-y-auto">
+  { locale === 'it' &&
+    <li><a id="home" href="/" class="!hidden" data-astro-reload>Home</a></li>
+    <li><a id="projects" href={getRelativeLocaleUrl(locale, "projects")}>Progetti</a></li>
+    <li><a id="bio" href={getRelativeLocaleUrl(locale, "bio")}>Bio</a></li>
+    <li><a id="info" href={getRelativeLocaleUrl(locale, "info")}>Info</a></li>
+    <li><a id="contact" href={getRelativeLocaleUrl(locale, "contact")}>Contatti</a></li> 
+    <li><a id={locale} class="mt-4 italic hidden" href={"/" + getLocaleByPath("es")}>Español</a></li>
+  }
+  { locale === 'es' &&
+    <li><a id="home" href="/" class="!hidden" data-astro-reload>Home</a></li>
+    <li><a id="projects" href={getRelativeLocaleUrl(locale, "projects")}>Proyecto</a></li>
+    <li><a id="bio" href={getRelativeLocaleUrl(locale, "bio")}>Biografía</a></li>
+    <li><a id="info" href={getRelativeLocaleUrl(locale, "info")}>Información</a></li>
+    <li><a id="contact" href={getRelativeLocaleUrl(locale, "contact")}>Contactos</a></li> 
+    <li><a id={locale} class="mt-4 italic" href="/">Italiano</a></li>
+  }
+</ul>
+
+<script
+  define:vars={{
+    sideBarActiveItemID: sideBarActiveItemID,
+  }}
+>
+  const activeItemElem = document.getElementById(sideBarActiveItemID);
+  activeItemElem && activeItemElem.classList.add("active");
+</script>

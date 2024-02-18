@@ -1,0 +1,49 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { Image } from "astro:assets";
+---
+
+<BaseLayout title = "Info" sideBarActiveItemID="info">
+  <div class="flex flex-col items-center justify-center h-full w-full gap-8">
+    <div class="flex lg:flex-row flex-col gap-8">
+      <div class="flex-1">
+        <Image class="mx-auto lg:mx-0" format="avif" width={320} height={240} src="/info-1.avif" alt="image" />
+      </div>
+
+      <div class="flex-1">
+        <h2 class="text-lg font-black">Il profumo selvaggio dell’origano</h3>
+        <p>
+          Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
+          nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam
+          erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci
+          tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo
+          consequat. Duis autem vel eum iriure dolor in hendrerit in vulpu-
+          tate velit esse molestie consequat, vel illum dolore eu feugiat nulla
+          facilisis at vero eros et accumsan et iusto odio dignissim qui blan-
+          dit praesent luptatum
+        </p>
+        <a href="https://www.immaginailselvaggio.it">www.immaginailselvaggio.it</a>
+      </div>
+    </div>
+    
+    <div class="flex gap-8 lg:flex-row flex-col-reverse">
+      <div class="flex-1">
+        <h2 class="text-lg font-black">Canalicchio</h3>
+        <p>
+          Lorem ipsum dolor sit amet, consectetuer adipiscing elit, sed diam
+          nonummy nibh euismod tincidunt ut laoreet dolore magna aliquam
+          erat volutpat. Ut wisi enim ad minim veniam, quis nostrud exerci
+          tation ullamcorper suscipit lobortis nisl ut aliquip ex ea commodo
+          consequat. Duis autem vel eum iriure dolor in hendrerit in vulpu-
+          tate velit esse molestie consequat, vel illum dolore eu feugiat nulla
+          facilisis at vero eros et accumsan et iusto odio dignissim qui blan-
+          dit praesent luptatum
+        </p>
+      </div>
+
+      <div class="flex-1">
+        <Image class="mx-auto lg:mx-0" format="avif" width={320} height={240} src="/info-1.avif" alt="image" />
+      </div>
+    </div>
+  </div>
+</BaseLayout>

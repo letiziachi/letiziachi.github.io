@@ -1,0 +1,148 @@
+---
+import BaseLayout from "../../layouts/BaseLayout.astro";
+import { Image } from "astro:assets";
+---
+
+<BaseLayout title="Bio" sideBarActiveItemID="bio">
+  <div class="flex flex-col gap-12 text-justify">
+    <div class="bio-section">
+      <div>
+        <p class="mb-4">
+          Letizia Chianello es una directora artística con conocimientos
+          multidisciplinarios, nacida y criada en Sicilia, se mudó al norte de
+          Italia y luego decidió viajar lejos y vivir en Argentina, en la sierra
+          cordobesa. Al regresar a Italia, decidió establecerse en su país de
+          origen, viviendo inmersa en la naturaleza y disfrutando de la vista
+          del mar y de las montañas Nebrodi. Fuente de bienestar e inspiración
+          para nuevos proyectos. <br>
+          Actualmente trabaja en proyectos culturales y
+          personales. Tiene pasión por el arte, la fotografía, el cine, la
+          ilustración, la música. Creativa, no le gusta encasillar lo que hace,
+          se sumerge en los proyectos, dirigiendo y diseñando todo el proceso de
+          forma coherente y completa. Desarrollar estrategias y lenguajes
+          visuales combinando creatividad y sentimiento.
+        </p>
+
+        <p class="italic">
+          Ha lavorato per la Condé Nast Italia, Vogue, MFF Milano Finanza
+          Fashion, Rivista Donna, Home Italia, Marie Claire Maison, Bravacasa,
+          Max Mara, Max&Co, Pennyblack, Coop Alleanza 3.0, Territori.Coop,
+          Freddi, Tetra Pak Italia, WMF Italia, Lameplast, CMB, Comune di Reggio
+          Emilia, Comune di Córdoba, Instituto Nacional del Teatro Córdoba, CBA
+          Cultura Córdoba, Polymates, Altermundi.
+        </p>
+      </div>
+
+      <div>
+        <Image
+          format="avif"
+          width={425}
+          height={320}
+          src="/bio-1.avif"
+          alt="image"
+        />
+      </div>
+    </div>
+
+    <div class="bio-section flex-row-reverse">
+      <div class="text-container gap-4">
+        <p>
+          Ritraggo quello <br />
+          che sembra non vedersi.
+        </p>
+        <p>Con delicatezza appare</p>
+        <p>Insieme</p>
+        <p>a quello che sento.</p>
+
+        <br class="grow" />
+
+        <p>Sentirlo e viverlo</p>
+        <p>
+          Attraverso i miei occhi <br />
+          in un presente ogni volta differente.
+        </p>
+      </div>
+      <div>
+        <Image
+          format="avif"
+          width={365}
+          height={485}
+          src="/bio-2.avif"
+          alt="image"
+        />
+      </div>
+    </div>
+
+    <div class="bio-section">
+      <div class="text-center">
+        <p>Uso la fotograﬁa per raccontare</p>
+        <p class="mt-4">
+          Un gesto, <br />
+          Un luogo, <br />
+          Una storia amata <br />
+        </p>
+        <p class="my-8">Per non dimenticare quello che è importante</p>
+        <div>
+          <Image
+            format="avif"
+            width={282}
+            height={424}
+            src="/bio-1.avif"
+            alt="image"
+          />
+        </div>
+      </div>
+      <div>
+        <Image
+          format="avif"
+          width={445}
+          height={300}
+          src="/bio-2.avif"
+          alt="image"
+        />
+      </div>
+    </div>
+
+    <div>
+      <p class="sm:pr-[20%] pr-0 sm:text-right text-center">Altre volte</p>
+    </div>
+
+    <div class="bio-section flex-row-reverse items-center lg:!items-start">
+      <div>
+        <div>
+          <Image
+            format="avif"
+            width={415}
+            height={555}
+            src="/bio-1.avif"
+            alt="image"
+          />
+        </div>
+
+        <div class="text-container">
+          <p>
+            fotografo con gioco <br />
+            e movimento d'infanzia,
+          </p>
+          <p class="mt-4">Presa da pura gaiezza dell'attimo</p>
+        </div>
+      </div>
+      <div>
+        <Image
+          format="avif"
+          width={320}
+          height={240}
+          src="/bio-2.avif"
+          alt="image"
+        />
+        <div class="text-container">
+          <p>
+            Qui, Lontano <br />
+            Nascosta, Raggio
+          </p>
+          <p class="mt-4">La mia storia</p>
+        </div>
+      </div>
+    </div>
+  </div>
+</BaseLayout>

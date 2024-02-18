@@ -1,0 +1,27 @@
+---
+import BaseLayout from "../layouts/BaseLayout.astro";
+import { Image } from "astro:assets";
+---
+
+<BaseLayout title="contact" sideBarActiveItemID="contact">
+  <div class="flex flex-col-reverse md:flex-row-reverse items-center justify-between h-full w-full gap-8">
+    <div class="flex flex-col items-center">
+      <p class="mb-8">
+        <a href="mailto:hola@letiziachianello.com">Hola@letiziachianello.com</a><br>
+        <a href="tel:+39377684I298">+39 377 684I298</a>
+      </p>
+      
+      <div>
+        <Image format="avif" width={282} height={424} src="/contact-1.avif" alt="image" />
+      </div>
+    </div>
+    
+    <div class="flex flex-col items-center">
+      <div>
+        <Image format="avif" width={415} height={555} src="/contact-1.avif" alt="image" />
+      </div>
+      
+      <p class="mt-8">Ciao luna</p>
+    </div>
+  </div>
+</BaseLayout>
