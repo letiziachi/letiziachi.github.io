@@ -34,23 +34,19 @@
     }
   }
   
-  if(document.getElementById("prev") !== null) {
-    document.getElementById("prev").addEventListener("click", () => {
-      animating = false;
-      newIndex = currentIndex > 0 ? (currentIndex - 1) : images.length - 1;
-      setBackground(newIndex);
-      currentIndex = newIndex;
-    });
-  }
-  
-  if(document.getElementById("prev") !== null) {
-    document.getElementById("next").addEventListener("click", () => {
-      animating = false;
-      newIndex = currentIndex < images.length - 1 ? (currentIndex + 1) : 0;
-      setBackground(newIndex);
-      currentIndex = newIndex;
-    });
-  }
+  document.getElementById("prev").addEventListener("click", () => {
+    animating = false;
+    newIndex = currentIndex > 0 ? (currentIndex - 1) : images.length - 1;
+    setBackground(newIndex);
+    currentIndex = newIndex;
+  });
+
+  document.getElementById("next").addEventListener("click", () => {
+    animating = false;
+    newIndex = currentIndex < images.length - 1 ? (currentIndex + 1) : 0;
+    setBackground(newIndex);
+    currentIndex = newIndex;
+  });
 
   // Timeout for slideshow
   setInterval(changeBackgroundImage, duration);
