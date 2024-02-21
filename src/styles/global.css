@@ -38,18 +38,35 @@
 body {
   @apply font-serif text-stone-800;
 }
+body.home .drawer-content {
+  max-height: 100vh;
+  overflow-y: hidden;
+}
+
 main {
   @apply lg:min-h-[85vh] min-h-[80vh];
 }
 
 
 /* HERO SLIDESHOW */
+#hero-section.full-screen {
+  @apply fixed top-0 left-0 right-0 h-screen flex transition-transform;
+}
+#hero-section.full-screen .image {
+  @apply h-screen w-screen bg-center bg-cover;
+  min-width: 100vw;
+}
+
 #hero-section {
-  @apply fixed top-0 left-0 right-0 h-screen flex transition-transform duration-1000 ease-in-out;
+  @apply bg-white flex transition-transform duration-1000 ease-in-out h-full w-full items-center justify-center;
 }
 #hero-section .image {
-  @apply h-screen w-screen bg-center bg-cover flex-1;
-  min-width: 100vw;
+  @apply bg-center bg-contain bg-no-repeat flex-1 m-auto fixed h-full w-full transition-opacity duration-500 ease-in-out opacity-0;
+  max-width: 80%;
+  max-height: 90%;
+}
+#hero-section .image.active {
+  @apply opacity-100;
 }
 
 
