@@ -3,7 +3,7 @@ const { sideBarActiveItemID, locale = Astro.currentLocale } = Astro.props;
 import { getLocaleByPath, getRelativeLocaleUrl } from "astro:i18n";
 ---
 
-<div class="font-serif-bold p-6 grow flex flex-col justify-center">
+<div class="hidden lg:flex font-serif-bold p-6 grow flex-col justify-center">
   <a data-astro-reload
     href={getRelativeLocaleUrl(locale, "/")}
     class="text-[#00BEB4] font-bold text-3xl name"

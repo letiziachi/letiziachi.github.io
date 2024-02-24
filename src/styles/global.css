@@ -116,7 +116,7 @@ aside ul.menu li a::before {
 }
 aside ul.menu li a.active::before,
 aside ul.menu li a:hover::before {
-  background-color: theme("colors.teal.600");
+  background-color: #00BEB4;
 }
 
 aside svg {
