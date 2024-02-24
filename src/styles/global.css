@@ -144,7 +144,7 @@ aside svg:hover {
 
 /* PROJECTs */
 body.projects .projects-container {
-  @apply gap-x-16 gap-y-20;
+  @apply gap-x-16 gap-y-16;
 }
 .projects-container:has(.card:hover) .card:not(:hover) > * {
   @apply transition ease-linear delay-300;
