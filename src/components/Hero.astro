@@ -16,12 +16,9 @@
   let newIndex;
   
   function setBackground(number) {
-    console.log(number);
-    
     images.forEach((image, index) => {
         image.classList.toggle("active", index === number);
     });
-
 
     // var hero = document.getElementById("hero-section");
     // OLD with slider, use class full-width
@@ -37,19 +34,23 @@
     }
   }
   
-  document.getElementById("prev").addEventListener("click", () => {
-    animating = false;
-    newIndex = currentIndex > 0 ? (currentIndex - 1) : images.length - 1;
-    setBackground(newIndex);
-    currentIndex = newIndex;
-  });
-
-  document.getElementById("next").addEventListener("click", () => {
-    animating = false;
-    newIndex = currentIndex < images.length - 1 ? (currentIndex + 1) : 0;
-    setBackground(newIndex);
-    currentIndex = newIndex;
-  });
+  if(document.getElementById("prev") !== null) {
+    document.getElementById("prev").addEventListener("click", () => {
+      animating = false;
+      newIndex = currentIndex > 0 ? (currentIndex - 1) : images.length - 1;
+      setBackground(newIndex);
+      currentIndex = newIndex;
+    });
+  }
+  
+  if(document.getElementById("prev") !== null) {
+    document.getElementById("next").addEventListener("click", () => {
+      animating = false;
+      newIndex = currentIndex < images.length - 1 ? (currentIndex + 1) : 0;
+      setBackground(newIndex);
+      currentIndex = newIndex;
+    });
+  }
 
   // Timeout for slideshow
   setInterval(changeBackgroundImage, duration);
