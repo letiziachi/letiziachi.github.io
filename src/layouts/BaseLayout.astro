@@ -45,5 +45,12 @@ const {
       </div>
       {includeSidebar && <SideBar sideBarActiveItemID={sideBarActiveItemID} />}
     </div>
+    
+    <script>
+      window.addEventListener('load', () => {
+        ScrollReveal().reveal('img,p', { interval: 100, reset: true });
+      })
+    </script>
+    
   </body>
 </html>
