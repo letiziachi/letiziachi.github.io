@@ -3,7 +3,7 @@ const { sideBarActiveItemID, locale = Astro.currentLocale } = Astro.props;
 import { getLocaleByPath, getRelativeLocaleUrl } from "astro:i18n";
 ---
 
-<div class="font-serif-bold p-6 grow flex flex-col justify-center">
+<div class="hidden lg:flex font-serif-bold p-6 grow flex-col justify-center">
   <a data-astro-reload
     href={getRelativeLocaleUrl(locale, "/")}
     class="text-[#00BEB4] font-bold text-3xl name"
@@ -24,6 +24,8 @@ import { getLocaleByPath, getRelativeLocaleUrl } from "astro:i18n";
     </h5>
   }
 </div>
+
+<div class="flex m-6 mb-20 lg:hidden rounded-xl bg-[#00BEB4] h-4 w-4"></div>
 
 <ul class="menu menu-md overflow-y-auto">
   { locale === 'it' &&

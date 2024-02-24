@@ -30,7 +30,6 @@
   @apply font-serif-bold;
 }
 
-
 /* :root {
   --filter: contrast(.4) brightness(1.8) blur(2px);
 } */
@@ -108,7 +107,7 @@ aside ul.menu li a::before {
 }
 aside ul.menu li a.active::before,
 aside ul.menu li a:hover::before {
-  background-color: theme("colors.teal.600");
+  background-color: #00BEB4;
 }
 
 aside svg {
