@@ -6,12 +6,9 @@ import BaseHead from "../components/BaseHead.astro";
 import Header from "../components/Header.astro";
 import Footer from "../components/Footer.astro";
 import SideBar from "../components/SideBar.astro";
-import Hero from "../components/Hero.astro";
 import { ViewTransitions } from "astro:transitions";
 
 import { SITE_TITLE, SITE_DESCRIPTION, TRANSITION_API } from "../config";
-
-const currentPath = Astro.url.pathname;
 
 const {
   image,
@@ -24,7 +21,7 @@ const {
 ---
 
 <!doctype html>
-<html lang="it" data-theme="lofi">
+<html lang="en" data-theme="lofi">
   <head>
     <BaseHead title={title} description={description} image={image} , ogType={ogType} />
     {TRANSITION_API && <ViewTransitions />}
@@ -34,7 +31,6 @@ const {
       <input id="my-drawer" type="checkbox" class="drawer-toggle" />
       <div class="drawer-content">
         <Header title={SITE_TITLE} />
-        { (currentPath === "/" || currentPath === "/es") && <Hero /> }
         <div class="md:flex md:justify-center w-full">
           <main transition:animate="fade"
               class="p-6 pt-10 lg:max-w-[1000px] max-w-[100vw] w-full">
@@ -45,12 +41,5 @@ const {
       </div>
       {includeSidebar && <SideBar sideBarActiveItemID={sideBarActiveItemID} />}
     </div>
-    
-    <script>
-      window.addEventListener('load', () => {
-        ScrollReveal().reveal('img,p', { interval: 100, reset: true });
-      })
-    </script>
-    
   </body>
 </html>
