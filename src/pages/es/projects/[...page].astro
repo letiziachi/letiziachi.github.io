@@ -8,7 +8,7 @@ import { getCollection } from "astro:content";
 export async function getStaticPaths({ paginate }) {
   const locale = Astro.currentLocale;
   const items = await getCollection("projects", locale);
-  // items.sort((a, b) => b.data.updatedDate.valueOf() - a.data.updatedDate.valueOf());
+  items.sort((a, b) => b.data.updatedDate.valueOf() - a.data.updatedDate.valueOf());
   const paths = items.map(page => {
     const [lang, ...slug] = page.slug.split('/');
     return { params: { lang, slug: slug.join('/') || undefined }, props: page };
