@@ -1,35 +1,96 @@
-:root {
-  --filter: contrast(.4) brightness(1.8) blur(2px);
+@font-face {
+  font-family: "Gelasio Bold";
+  src: url("fonts/Gelasio-Bold.ttf");
+  font-variant-ligatures: common-ligatures;
 }
+
+@font-face {
+  font-family: "Gelasio";
+  src: url("fonts/Gelasio-Regular.ttf");
+  font-variant-ligatures: common-ligatures;
+}
+
+@font-face {
+  font-family: "Gelasio Italic";
+  src: url("fonts/Gelasio-Italic.ttf");
+  font-variant-ligatures: common-ligatures;
+}
+
+@font-face {
+  font-family: "Open Sans";
+  src: url("fonts/OpenSans-VariableFont_wdth,wght.ttf");
+}
+
+@font-face {
+  font-family: "Open Sans Italic";
+  src: url("fonts/OpenSans-Italic-VariableFont_wdth,wght.ttf");
+}
+
+.font-bold {
+  @apply font-serif-bold;
+}
+
+/* :root {
+  --filter: contrast(.4) brightness(1.8) blur(2px);
+} */
 
 body {
   @apply font-serif text-stone-800;
 }
+body.home .drawer-content {
+  max-height: 100vh;
+  overflow-y: hidden;
+}
+
 main {
   @apply lg:min-h-[85vh] min-h-[80vh];
 }
 
+p, div {
+  @apply leading-6 text-base;
+}
+
+/* scrollrevealjs */
+html.sr .load-hidden {
+  visibility: hidden;
+}
+
 
 /* HERO SLIDESHOW */
+#hero-section.full-screen {
+  @apply fixed top-0 left-0 right-0 h-screen flex transition-transform;
+}
+#hero-section.full-screen .image {
+  @apply h-screen w-screen bg-center bg-cover;
+  min-width: 100vw;
+}
+
 #hero-section {
-  @apply fixed top-0 left-0 right-0 h-screen flex transition-transform duration-1000 ease-in-out;
+  @apply bg-white flex transition-transform duration-1000 ease-in-out h-full w-full items-center justify-center;
 }
 #hero-section .image {
-  @apply h-screen w-screen bg-center bg-cover flex-1;
-  min-width: 100vw;
+  @apply bg-center bg-contain bg-no-repeat flex-1 m-auto fixed h-full w-full transition-opacity duration-500 ease-in-out opacity-0;
+  max-width: 80%;
+  max-height: 90%;
+}
+#hero-section .image.active {
+  @apply opacity-100;
 }
 
 
 /* SIDEBAR */
 aside {
-  /* @apply bg-neutral-200; */
-  @apply lg:bg-transparent transition-colors;
+  /* @apply lg:bg-transparent transition-colors; */
   /* @apply backdrop-blur-md; */
   /* @apply bg-gradient-to-r from-white/40 to-transparent; */
+  /* backdrop-filter: var(--filter); */
+  /* text-shadow: 0 0 2px #fff3; */
+  @apply bg-white;
   width: min-content !important;
-  backdrop-filter: var(--filter);
   user-select: none;
-  text-shadow: 0 0 2px #fff3;
+}
+aside h5 {
+  font-family: "Gelasio Italic";
 }
 aside ul.menu {
   @apply p-0 grow shrink font-sans font-semibold text-gray-600;
@@ -39,9 +100,23 @@ aside ul.menu li a {
 }
 aside ul.menu li a.active,
 aside ul.menu li a:hover {
-  @apply border-teal-600 font-black;
+  /* @apply border-teal-600 font-black; */
   color: black !important;
   background-color: transparent !important;
+}
+aside ul.menu li a::before {
+  content: '';
+  position: absolute;
+  width: .5rem;
+  height: .5rem;
+  left: .5rem;
+  border-radius: .5rem;
+  background-color: none;
+  @apply transition-colors;
+}
+aside ul.menu li a.active::before,
+aside ul.menu li a:hover::before {
+  background-color: #00BEB4;
 }
 
 aside svg {
@@ -54,8 +129,9 @@ aside svg:hover {
 
 /* MOBILE HEADER */
 #mobile-header {
-  @apply bg-gradient-to-b from-white/20 to-white/50 shadow-sm;
-  backdrop-filter: var(--filter);
+  /* @apply bg-gradient-to-b from-white/20 to-white/50 shadow-sm; */
+  /* backdrop-filter: var(--filter); */
+  @apply bg-white border-b border-black;
   @apply sticky lg:hidden top-0 z-30 flex h-16 w-full justify-center transition-all duration-100;
   text-shadow: 0 0 2px #fff5;
 }
@@ -68,9 +144,8 @@ aside svg:hover {
 
 /* PROJECTs */
 body.projects .projects-container {
-  @apply gap-8;
+  @apply gap-x-16 gap-y-16;
 }
-
 .projects-container:has(.card:hover) .card:not(:hover) > * {
   @apply transition ease-linear delay-300;
 }

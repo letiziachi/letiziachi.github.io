@@ -8,6 +8,7 @@ module.exports = {
 			fontFamily: {
 				sans: ["Open Sans", ...defaultTheme.fontFamily.sans],
 				serif: ["Gelasio", ...defaultTheme.fontFamily.serif],
+				"serif-bold": ["Gelasio Bold", ...defaultTheme.fontFamily.serif],
 			  },
 		},
 	},
