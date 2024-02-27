@@ -6,7 +6,7 @@ import tailwind from "@astrojs/tailwind";
 // https://astro.build/config
 export default defineConfig({
   site: 'https://astronaut.github.io',
-  output: 'hybrid',
+  // output: 'hybrid',
   integrations: [mdx(), sitemap(), tailwind()],
   i18n: {
     defaultLocale: "it",
