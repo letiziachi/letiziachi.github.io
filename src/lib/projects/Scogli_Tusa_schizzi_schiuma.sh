@@ -3,10 +3,10 @@
 export PROJECT_INDEX=40
 export IMAGES_SOURCE_DIR="/media/letizia/ADB6-6E82/2023-SICILIA/2023-10-22-Tribbu_mare_Tusa_scogli/Selezione/"
 export PROJECT_TITLE="Effetto mare d'ottobre"
-export PROJECT_SEO="scogli schiuma mare Tusa ottobre"
+export PROJECT_SEO="Sicilia scogli schiuma mare Tusa natura mare sole calore gioco ottobre Olympus OM1"
 export COVER_IMAGE="PA210538.JPG"
 
-source ../project_utils.sh
+source ../projects_utils.sh
 
 function imagesList()
 {
@@ -43,12 +43,9 @@ ENDLIST
 function projectText()
 {
 	cat << ENDTEXT
-Il testo del progetto va qui
-e anche qui
 
-
-e qui pure
 ENDTEXT
 }
 
-generateProject
+# generate only if executed directly not sourced by other script
+(return 0 2>/dev/null) || generateProject
