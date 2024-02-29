@@ -45,7 +45,6 @@ ENDLIST
 function projectText()
 {
 	cat << ENDTEXT
-
 ENDTEXT
 }
 
