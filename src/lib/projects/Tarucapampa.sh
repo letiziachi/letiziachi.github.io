@@ -3,10 +3,10 @@
 export PROJECT_INDEX=30
 export IMAGES_SOURCE_DIR="/home/letizia/01-PROGETTI-FOTOGRAFIA/Tarucapampa/"
 export PROJECT_TITLE="Taruca Pampa . Sierra de Córdoba, Argentina"
-export PROJECT_SEO="Traslasierra Cordoba Argentina Taruca Pampa Escursione cascate familia Leyria oro sierra natura granito"
+export PROJECT_SEO="Traslasierra Cordoba Argentina Taruca Pampa Escursione cascate familia Leyria oro sierra natura granito olympus"
 export COVER_IMAGE="08-P1280061.jpg"
 
-source ../project_utils.sh
+source ../projects_utils.sh
 
 function imagesList()
 {
@@ -46,12 +46,9 @@ ENDLIST
 function projectText()
 {
 	cat << ENDTEXT
-Il testo del progetto va qui
-e anche qui
 
-
-e qui pure
 ENDTEXT
 }
 
-generateProject
+# generate only if executed directly not sourced by other script
+(return 0 2>/dev/null) || generateProject

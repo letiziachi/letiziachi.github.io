@@ -3,10 +3,10 @@
 export PROJECT_INDEX=70
 export IMAGES_SOURCE_DIR="/media/letizia/SEAGATE_BASIC_5TB/2024-SICILIA/2024-01-01-Mistretta_Matri_Tagghiavia_Tribbu/Selezione/"
 export PROJECT_TITLE="La Pampa di Tagghjavia"
-export PROJECT_SEO="pampa gioco educazione natura Sicilia Nebrodi pecore"
+export PROJECT_SEO="pampa gioco educazione bambini natura montessori Sicilia Monti Nebrodi pecore mandria lana dupareilaumeme abbigliamento Affenzahn zainetto eco-friendly riciclo sostenibile Olympus OM1"
 export COVER_IMAGE="P1011579.JPG"
 
-source ../project_utils.sh
+source ../projects_utils.sh
 
 function imagesList()
 {
@@ -45,12 +45,9 @@ ENDLIST
 function projectText()
 {
 	cat << ENDTEXT
-Il testo del progetto va qui
-e anche qui
 
-
-e qui pure
 ENDTEXT
 }
 
-generateProject
+# generate only if executed directly not sourced by other script
+(return 0 2>/dev/null) || generateProject

@@ -27,6 +27,11 @@ function projectsMdDir()
 	realpath "${PROJECT_UTILS_SRC_DIR}/../content/projects/"
 }
 
+function projectsImagesDir()
+{
+	realpath "${PROJECT_UTILS_SRC_DIR}/../../public/projects/"
+}
+
 function imagesList()
 {
 	echo "Your project miss implementation for imagesList"
@@ -49,7 +54,7 @@ function projectFileName()
 
 function collectionDir()
 {
-	realpath "${PROJECT_UTILS_SRC_DIR}/../../public/$(projectFileName)/"
+	echo "$(projectsImagesDir)/$(projectFileName)/"
 }
 
 function imageSeoName()
@@ -102,7 +107,7 @@ function compressAllImages()
 			"${IMAGES_SOURCE_DIR}/$mImage" \
 			"$(collectionDir)/$outImgName"
 
-		PROJECT_UTILS_IMAGES_LIST_OUTPUT+=("\"/$(projectFileName)/$outImgName\"")
+		PROJECT_UTILS_IMAGES_LIST_OUTPUT+=("\"/projects/$(projectFileName)/$outImgName\"")
 	done
 }
 
@@ -123,7 +128,7 @@ function updateProjectFile()
 title: "$PROJECT_TITLE"
 description: ""
 updatedDate: "$(date "+%b %d %Y")"
-coverImage: "/$(projectFileName)/$(imageSeoName "$COVER_IMAGE" 0)"
+coverImage: "/projects/$(projectFileName)/$(imageSeoName "$COVER_IMAGE" 0)"
 images: $(bashArrToAstro PROJECT_UTILS_IMAGES_LIST_OUTPUT)
 badge: ""
 customCssClass: ""
@@ -138,7 +143,7 @@ function cleanIndex()
 	local pIndex="$1"
 
 	rm -fv "$(projectsMdDir)"/$(printf '%04d' $PROJECT_INDEX)*.md
-	rm -rfv "${PROJECT_UTILS_SRC_DIR}/../../public"/$(printf '%04d' $PROJECT_INDEX)*
+	rm -rfv "$(projectsImagesDir)"/$(printf '%04d' $PROJECT_INDEX)*
 }
 
 function generateProject()
@@ -146,4 +151,71 @@ function generateProject()
 	cleanIndex
 	compressAllImages
 	updateProjectFile
+}
+
+function indexReport()
+{
+	pushd "${PROJECT_UTILS_SRC_DIR}/projects"
+	for mProj in *.sh ;  do
+		source $mProj
+		echo $(printf '\n%04d' $PROJECT_INDEX) $PROJECT_TITLE
+	done | sort -n
+	popd
+}
+
+function usedIndexes()
+{
+	pushd projects
+	for mProj in "${PROJECT_UTILS_SRC_DIR}/projects"/*.sh ;  do
+		source $mProj
+		echo $(printf '\n%04d' $PROJECT_INDEX)
+	done | sort -n -u
+	popd
+}
+
+function haveDuplicatedIndexes()
+{
+	pushd "${PROJECT_UTILS_SRC_DIR}/projects"
+	local unsortedIndexes="$(
+		for mProj in *.sh ;  do
+			source $mProj
+			echo $PROJECT_INDEX
+		done
+	)"
+	popd
+
+	local iSorted="$( echo "$unsortedIndexes" | sort -n)"
+	local iSortedUnique="$( echo "$unsortedIndexes" | sort -n -u)"
+
+	[ "$iSorted" != "$iSortedUnique" ] || false
+}
+
+function cleanProjects()
+{
+	local mUsedIndexes="$(usedIndexes)"
+
+	pushd "$(projectsImagesDir)"
+	for mCollection in +([0123456789])* ; do
+		echo "$mUsedIndexes" | grep -q "${mCollection:0:4}" || \
+			rm -rv "$mCollection"
+	done
+	popd
+
+	pushd "$(projectsMdDir)"
+	for mFile in +([0123456789])*.md ; do
+		echo "$mUsedIndexes" | grep -q "${mFile:0:4}" || \
+			rm -rv "$mFile"
+	done
+	popd
+}
+
+function updateAllProjects()
+{
+	cleanProjects
+
+	pushd "${PROJECT_UTILS_SRC_DIR}/projects"
+	for mProj in *.sh ;  do
+		./$mProj
+	done
+	popd
 }
