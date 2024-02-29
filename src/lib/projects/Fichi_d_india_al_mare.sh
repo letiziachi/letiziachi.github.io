@@ -38,11 +38,6 @@ ENDLIST
 function projectText()
 {
 	cat << ENDTEXT
-Il testo del progetto va qui
-e anche qui
-
-
-e qui pure
 ENDTEXT
 }
 
