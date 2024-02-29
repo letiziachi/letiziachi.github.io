@@ -6,7 +6,7 @@ export PROJECT_TITLE="Fichi d'india al mare"
 export PROJECT_SEO="fichi india mare frutta merenda tramonto educazione natura"
 export COVER_IMAGE="P8102330.JPG"
 
-source ../project_utils.sh
+source ../projects_utils.sh
 
 function imagesList()
 {
@@ -46,4 +46,5 @@ e qui pure
 ENDTEXT
 }
 
-generateProject
+# generate only if executed directly not sourced by other script
+(return 0 2>/dev/null) || generateProject
