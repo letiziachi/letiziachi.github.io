@@ -8,8 +8,7 @@ badge: ""
 customCssClass: ""
 ---
 
-Il testo del progetto va qui
-e anche qui
+Festival Internacional de Títeres, Córdoba, Argentina.  
 
 
-e qui pure
+*Sul <a href="https://www.behance.net/gallery/179294547/Festival-Internacional-de-Titeres-Argentina" target="_blank">profilo Behance</a> l'intero progetto.*
