@@ -1,17 +1,20 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { Image } from "astro:assets";
+
+import copertinaPanYVino from "./info/01-Festiva_International_Titeres_2024-Visual_illustrazione_Argentina_Cordoba_teatro_figura_gatto_luna_stelle_agenzia_cultura_cordoba_ministerio_argentino.jpg";
 ---
 
 <BaseLayout title = "Info" sideBarActiveItemID="info">
   <div class="flex flex-col items-center justify-center h-full w-full gap-8">
-    <div class="flex lg:flex-row flex-col gap-8">
-      <div class="flex-1">
-        <Image class="mx-auto lg:mx-0" width={3300} height={2500} src="/info/01-Festiva_International_Titeres_2024-Visual_illustrazione_Argentina_Cordoba_teatro_figura_gatto_luna_stelle_agenzia_cultura_cordoba_ministerio_argentino.jpg" alt="image" />
+    <div class="flex flex-col lg:flex-row lg:gap-24 lg:mr-8">
+      <div class="flex-1 lg:max-w-[550px]">
+        <Image class="mx-auto lg:mx-0" src={copertinaPanYVino} alt="Copertina festival Pan y Vino" />
       </div>
 
-      <div class="flex-1">
-        <h2 class="text-lg font-black">Festival Internacional de Títeres | Córdoba, Argentina.</h3>
+      <div class="flex-1 lg:max-w-[550px]">
+        <h2 class="text-lg font-black">Festival Internacional de Títeres | Córdoba, Argentina.</h2>
+        <br/>
         <p>
           Nuovo visual illustrato per l'edizione 2024 del Festival
           internazionale di teatro di figura rivolto a tutte le età ma soprattutto
@@ -21,8 +24,8 @@ import { Image } from "astro:assets";
           locale, lo sviluppo delle economie regionali e l'emancipazione culturale
           della classe popolare argentina, nonché di rafforzare i collegamenti
           e l'integrazione regionale della provincia di Córdoba.  
-
         </p>
+        <br/>
         <a target="_blank" href="https://www.behance.net/gallery/192932687/Festival-Internacional-de-Titeres-2024-Argentina">Visualizza il concept</a>
       </div>
     </div>
