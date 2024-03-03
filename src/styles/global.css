@@ -191,6 +191,16 @@ body.projects .projects-container {
 }
 
 
+/* ARTICLE, project */
+.prose {
+  line-height: 1.1rem !important;
+  max-width: unset !important;
+}
+
+p, div {
+  line-height: 1.25rem !important;
+}
+
 /* FOOTER */
 footer > * {
   position: relative;

@@ -26,7 +26,7 @@ import { Image } from "astro:assets";
   <main class="md:flex md:justify-center">
     <article class="prose prose-lg max-w-[750px] prose-img:mx-auto">
       <div class="mb-4">
-        <h1 class="title my-2 text-4xl font-bold flex items-center">
+        <h1 class="title my-2 text-2xl font-bold flex items-center">
           {title}
           {badge && <div class="badge badge-secondary mx-2">{badge}</div>}
         </h1>
@@ -48,7 +48,7 @@ import { Image } from "astro:assets";
         <div>
           {
             images.map((image) => (
-              <Image width={750} height={422} format="webp" src={image} alt={title} />
+              <Image width={1600} height={1600} src={image} alt={title} />
             ))
           }
         </div>)
@@ -57,7 +57,7 @@ import { Image } from "astro:assets";
   </main>
 
   <script>
-      ScrollReveal().reveal('img,p', { interval: 100, reset: true });
+      ScrollReveal().reveal('img,p');
   </script>
 
 </BaseLayout>
