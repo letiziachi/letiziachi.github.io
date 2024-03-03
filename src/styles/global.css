@@ -190,8 +190,15 @@ body.projects .projects-container {
   @apply w-min flex flex-col mx-auto my-[12%];
 }
 
+
+/* ARTICLE, project */
 .prose {
+  line-height: 1.1rem !important;
   max-width: unset !important;
+}
+
+p, div {
+  line-height: 1.25rem !important;
 }
 
 /* FOOTER */
