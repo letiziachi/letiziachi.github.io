@@ -190,6 +190,9 @@ body.projects .projects-container {
   @apply w-min flex flex-col mx-auto my-[12%];
 }
 
+.prose {
+  max-width: unset !important;
+}
 
 /* FOOTER */
 footer > * {
