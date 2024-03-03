@@ -24,7 +24,7 @@ import { Image } from "astro:assets";
 
 <BaseLayout title={title} description={description} image={coverImage}>
   <main class="md:flex md:justify-center">
-    <article class="prose prose-lg prose-img:mx-auto">
+    <article class="prose prose-lg max-w-[750px] prose-img:mx-auto">
       <div class="mb-4">
         <h1 class="title my-2 text-4xl font-bold flex items-center">
           {title}
@@ -57,7 +57,7 @@ import { Image } from "astro:assets";
   </main>
 
   <script>
-      ScrollReveal().reveal('img,p', { interval: 100, reset: true });
+      ScrollReveal().reveal('img,p');
   </script>
 
 </BaseLayout>
