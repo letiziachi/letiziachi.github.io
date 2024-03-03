@@ -201,6 +201,11 @@ p, div {
   line-height: 1.25rem !important;
 }
 
+body.info main a,
+article a {
+  @apply italic text-teal-600;
+}
+
 /* FOOTER */
 footer > * {
   position: relative;
