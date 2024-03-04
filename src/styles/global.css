@@ -73,6 +73,13 @@ html.sr .load-hidden {
   max-width: 80%;
   max-height: 90%;
 }
+@media (max-width: 768px) {
+  #hero-section .image {
+    @apply top-0;
+    max-width: 100%;
+    max-height: 100%;
+  }
+}
 #hero-section .image.active {
   @apply opacity-100;
 }
