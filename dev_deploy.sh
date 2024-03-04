@@ -6,5 +6,5 @@ docker run \
         --volume "$PWD":"$PWD" \
         --workdir "$PWD" \
         node:19-bullseye \
-	/bin/bash -c "npm install && npm run dev"
+	/bin/bash -c "npm install && npx astro dev --host"
 
