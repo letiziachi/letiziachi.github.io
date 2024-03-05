@@ -7,25 +7,25 @@ const {
   customCssClass,
   // desc,
 } = Astro.props;
+
 import { Image } from "astro:assets";
+
+import { getCollection } from "astro:content";
+const projectCollection = await getCollection("projects");
 ---
 
 <div class={customCssClass + ' card'}>
   <a href={url}>
     <div class="card-content flex-col">
       {
-        (coverImage) && (
           <Image
-            width={1600}
-            height={1600}
             src={coverImage}
             alt={title}
-            class="max-w-full"
+            class="max-h-[85vh] max-w-full w-auto object-contain"
           />
-        )
       }
-      <div class="w-full p-5 md:p-0 mt-2">
-        <h1 class="text-lg font-bold flex flex-row items-center justify-between">
+      <div class="w-full p-0 mt-2">
+        <h1 class="text-base 2xl:text-lg font-bold flex flex-row items-center justify-between">
           {title}
           {badge && <div class="badge badge-secondary mx-2">{badge}</div>}
         </h1>
