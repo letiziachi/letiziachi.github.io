@@ -185,7 +185,7 @@ body.projects .projects-container {
 
 /* BIO */
 .bio-section {
-  @apply flex gap-12 items-center lg:items-end lg:flex-row flex-col;
+  @apply flex gap-12 items-center lg:flex-row flex-col;
 }
 .bio-section > * {
   @apply flex-1;
@@ -194,7 +194,7 @@ body.projects .projects-container {
   width: max-content;
 }
 .bio-section .text-container {
-  @apply w-min flex flex-col mx-auto my-[12%];
+  @apply w-min flex flex-col mx-auto;
 }
 
 
@@ -217,3 +217,9 @@ article a {
 footer > * {
   position: relative;
 }
+
+/* Set image maximum height to be 90% of view port EVERYWHERE it might looks
+ * like shooting a fly with a cannon but should be acceptable in our case */
+/*img {
+  max-height: 90vh;
+}*/
