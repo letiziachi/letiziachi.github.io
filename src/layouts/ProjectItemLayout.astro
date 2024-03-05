@@ -48,7 +48,8 @@ import { Image } from "astro:assets";
         <div>
           {
             images.map((image) => (
-              <Image width={1600} height={1600} src={image} alt={title} />
+              <Image src={image} alt={title}
+                     class="max-h-[96vh] max-w-full w-auto object-contain pt-10" />
             ))
           }
         </div>)
