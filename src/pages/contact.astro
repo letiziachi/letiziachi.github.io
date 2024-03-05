@@ -1,27 +1,31 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { Image } from "astro:assets";
+
+import fotoLetiziaPortrait from "../images/contatti/01-Portrait_ritratto_Letizia_Chianello_photographer_fotografia_Sicilia_natureabito_dress_max_mara_love_pois.JPG";
+import fotoFichiIndiaMare from  "../images/contatti/02-Sicilia_mare_sea_fichidindia_prickly_pear_cactus_pear_mare_letizia_chianello_olympus_omsystem_om1_12_40_mm_pro.jpg";
 ---
 
 <BaseLayout title="contact" sideBarActiveItemID="contact">
-  <div class="flex flex-col-reverse md:flex-row-reverse items-center justify-around h-full w-full gap-8">
-    <div class="flex flex-col items-center">
-      <p class="mb-8">
-        <a href="mailto:hola@letiziachianello.com">Hola@letiziachianello.com</a><br>
+  <div class="flex flex-col lg:flex-row items-center h-full w-full gap-8">
+    <div class="flex-1 lg:ml-[10vh]">
+      <Image src={fotoLetiziaPortrait} alt="Foto ritratto Letizia Chianello"
+             class="max-h-[90vh] w-auto object-contain" />
+    </div>
+
+    <div class="flex-1 lg:mr-[10vh] flex flex-col items-center gap-1">
+      <p class="2xl:text-xl">
+        <a href="mailto:hola@letiziachianello.com">hola@letiziachianello.com</a>
+      </p>
+      <p>
         <a href="tel:+39377684I298">+39 377 684I298</a>
       </p>
-      
-      <div>
-        <Image width={364} height={648} src="/contatti/01-Portrait_ritratto_Letizia_Chianello_photographer_fotografia_Sicilia_natureabito_dress_max_mara_love_pois.JPG" alt="image" />
-      </div>
-    </div>
-    
-    <div class="flex flex-col items-center">
-      <div>
-        <Image width={415} height={555} src="/contatti/02-Sicilia_mare_sea_fichidindia_prickly_pear_cactus_pear_mare_letizia_chianello_olympus_omsystem_om1_12_40_mm_pro.jpg" alt="image" />
+
+      <div class="mt-6 mb-6">
+        <Image src={fotoFichiIndiaMare} alt="Foto fichi d'india al mare" />
       </div>
       
-      <p class="mt-8"><i>Danzano i fichidindia al mare</i></p>
+      <p><i>Danzano i fichidindia al mare</i></p>
     </div>
   </div>
 </BaseLayout>
