@@ -29,7 +29,7 @@ function projectsMdDir()
 
 function projectsImagesDir()
 {
-	realpath "${PROJECT_UTILS_SRC_DIR}/../../public/projects/"
+	realpath "${PROJECT_UTILS_SRC_DIR}/../images/projects/"
 }
 
 function imagesList()
@@ -107,7 +107,7 @@ function compressAllImages()
 			"${IMAGES_SOURCE_DIR}/$mImage" \
 			"$(collectionDir)/$outImgName"
 
-		PROJECT_UTILS_IMAGES_LIST_OUTPUT+=("\"/projects/$(projectFileName)/$outImgName\"")
+		PROJECT_UTILS_IMAGES_LIST_OUTPUT+=("\"../../images/projects/$(projectFileName)/$outImgName\"")
 	done
 }
 
@@ -128,7 +128,7 @@ function updateProjectFile()
 title: "$PROJECT_TITLE"
 description: ""
 updatedDate: "$(date "+%b %d %Y")"
-coverImage: "/projects/$(projectFileName)/$(imageSeoName "$COVER_IMAGE" 0)"
+coverImage: "../../images/projects/$(projectFileName)/$(imageSeoName "$COVER_IMAGE" 0)"
 images: $(bashArrToAstro PROJECT_UTILS_IMAGES_LIST_OUTPUT)
 badge: ""
 customCssClass: ""
