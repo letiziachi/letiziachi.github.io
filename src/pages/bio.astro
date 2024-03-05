@@ -1,15 +1,23 @@
 ---
 import BaseLayout from "../layouts/BaseLayout.astro";
 import { Image } from "astro:assets";
+
+import letiziaPortrait from "../images/bio/01-Letizia_Chianello_portrait_ritratto_fotografia_Sicilia_natura_Nebrodi.jpg"
+import fotoPurracca from "../images/bio/02-Fiori_asteraceae_asfodelo_asfodeluz_purracca_formica_primavera_Sicilia.jpg"
+import fotoBambiniAbbraccio from "../images/bio/03-Sicilia_Monti_Nebrodi_bambini_abbraccio_educazione_natura_pecore_zainetto_Affenzahn_dupareilaumeme.JPG"
+import fotoFogliaQuerciaMano from "../images/bio/04-Sicilia_Monti_Nebrodi_bosco_cerri_querce_mano_bambina_foglia_educazione_natura.JPG"
+import fotoBambiniFango from "../images/bio/05-Sicilia_Monti_Nebrodi_gioco_educazione_natura_bambini_vasca_gebbia_acqua_fango.JPG"
+import fotoPietraRosaSpiaggia from "../images/bio/06-Sicilia_mar_tirreno_spiaggia_dettaglio_pietra_rosa_schiuma_sabbia_movimento_.jpg"
 ---
 
 <BaseLayout title="Bio" sideBarActiveItemID="bio">
-  <div class="flex flex-col gap-12 text-justify">
+  <div class="flex flex-col gap-12">
     <div class="bio-section">
-      <div>
+      <div class="lg:max-w-[800px]">
         <p class="mb-4">
-          Letizia Chianello è una direttrice artistica con conoscenze multidis-
-          ciplinari, nata e cresciuta in Sicilia si è spostata al nord Italia
+          Letizia Chianello è una direttrice artistica con conoscenze
+          multidisciplinari, nata e cresciuta in Sicilia si è spostata al nord
+          Italia
           per poi decidere di viaggiare lontano e vivere in Argentina, sulla
           sierra cordobese. Ritornata in Italia ha deciso di stabilirsi nel suo
           paese d'origine vivendo immersa nella natura e godendo della vista del
@@ -17,7 +25,8 @@ import { Image } from "astro:assets";
           progetti.
           <br />
           Attualmente sta lavorando a progetti culturali e personali. Creativa
-          non le piace incasellare cosa fa, si immerge nei progetti dirigendo e disegnando
+          non le piace incasellare cosa fa, si immerge nei progetti dirigendo e
+          disegnando
           tutto il percorso in maniera coerente e completa. Sviluppa strategie e
           linguaggi visivi combinando creatività e sentimento.
         </p>
@@ -30,19 +39,23 @@ import { Image } from "astro:assets";
           Max Mara, Max&Co, Pennyblack, Coop,
           Freddi, Tetra Pak Italia, WMF Italia, Lameplast, CMB, Comune di Reggio
           Emilia, Comune di Córdoba, Instituto Nacional del Teatro Córdoba, CBA
-          Cultura Córdoba, Polymates, Altermundi.
+          Cultura Córdoba, Altermundi, Polymathes.
         </p>
       </div>
 
-      <div>
-        <Image width={425} height={320} src="/bio/01-Letizia_Chianello_portrait_ritratto_fotografia_Sicilia_natura_Nebrodi.jpg" alt="image" />
+      <div class="lg:max-w-[800px]">
+        <Image src={letiziaPortrait} alt="Letizia Chianello portrait" />
       </div>
     </div>
 
-    <div class="bio-section flex-row-reverse">
+    <div class="bio-section">
+      <div>
+        <Image src={fotoPurracca} alt="Foto asfodelo mediterraneo"
+               class="max-h-[90vh] w-auto object-contain" />
+      </div>
       <div class="text-container gap-4">
         <p>
-                    Ritraggo quello <br />
+          Ritraggo quello <br />
           che sembra non vedersi.
         </p>
         <p>Con delicatezza appare</p>
@@ -57,52 +70,54 @@ import { Image } from "astro:assets";
           in un presente ogni volta diverso.
         </p>
       </div>
-      <div>
-        <Image width={365} height={485} src="/bio/02-Fiori_asteraceae_asfodelo_asfodeluz_purracca_formica_primavera_Sicilia.jpg" alt="image" />
-      </div>
     </div>
 
     <div class="bio-section">
       <div class="text-center">
-        <p>Mi piace ciò che respira autenticità, </p>
-        <p class="mt-4 ">
-          Racconto il rapporto fra natura e persone <br />
-          Un gesto, un luogo, una storia sincera <br />
-        </p>
-        <p class="my-8">Per non dimenticare quello che è importante</p>
         <div>
-          <Image width={282} height={424} src="/bio/03-Sicilia_Monti_Nebrodi_bambini_abbraccio_educazione_natura_pecore_zainetto_Affenzahn_dupareilaumeme.JPG" alt="image" />
+          <Image src={fotoBambiniAbbraccio}
+                 alt="Foto bambini che si abbracciano" />
         </div>
+        <p class="mt-8">Mi piace ciò che respira autenticità. </p>
+        <p class="mt-4">
+          Racconto il rapporto fra natura e persone <br />
+          Un gesto, un luogo, una storia sincera
+        </p>
+        <p class="mt-4">Per non dimenticare quello che è importante</p>
       </div>
-      <div>
-        <Image width={445} height={300} src="/bio/04-Sicilia_Monti_Nebrodi_bosco_cerri_querce_mano_bambina_foglia_educazione_natura.JPG" alt="image" />
+      <div class="w-auto" >
+        <Image src={fotoFogliaQuerciaMano}
+               alt="Foto bambina con una foglia di quercia in mano"
+               class="max-h-[90vh] object-contain" />
+        <p class="text-center mt-10">Altre volte</p>
       </div>
     </div>
 
-    <div>
-      <p class="sm:pr-[20%] pr-0 sm:text-right text-center">Altre volte</p>
-    </div>
-
-    <div class="bio-section flex-row-reverse items-center lg:!items-start">
-      <div>
+    <div class="bio-section">
+      <div class="xl:pl-[6vw]">
         <div>
-          <Image width={415} height={555} src="/bio/05-Sicilia_Monti_Nebrodi_gioco_educazione_natura_bambini_vasca_gebbia_acqua_fango.JPG" alt="image" />
+          <Image src={fotoBambiniFango}
+                 alt="Foto bambini che giocano col fango"
+                 class="max-h-[80vh] w-auto object-contain" />
         </div>
 
         <div class="text-container">
-          <p>
+          <p class="mt-6">
             Fotografo con sensibilità <br />
             momenti spontanei dell'infanzia,
           </p>
-          <p class="mt-4">Presa da pura gaiezza inquadro
-          la loro bellezza e preziosità</p>
+          <p class="mt-4">
+            Presa da pura gaiezza inquadro<br/>
+            la loro bellezza e preziosità</p>
         </div>
-
       </div>
+
       <div>
-        <Image width={320} height={240} src="/bio/06-Sicilia_mar_tirreno_spiaggia_dettaglio_pietra_rosa_schiuma_sabbia_movimento_.jpg" alt="image" />
-        <div class="text-container">
-          <p>
+        <Image src={fotoPietraRosaSpiaggia}
+               alt="Foto pietra rosa sulla spiaggia"
+               class="max-h-[90vh] w-auto object-contain" />
+        <div class="text-container lg:pl-20">
+          <p class="mt-6">
             Qui, Lontano <br />
             Nascosta, Raggio
           </p>
