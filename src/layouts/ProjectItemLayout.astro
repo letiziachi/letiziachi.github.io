@@ -22,7 +22,7 @@ const displayDate = dayjs(updatedDate).format("ll");
 import { Image } from "astro:assets";
 ---
 
-<BaseLayout title={title} description={description} image={coverImage}>
+<BaseLayout title={title} description={description} image={coverImage} sideBarActiveItemID="projects">
   <main>
     <article class="flex flex-col items-center gap-20">
       <div class="flex flex-col mx-auto shrink">
