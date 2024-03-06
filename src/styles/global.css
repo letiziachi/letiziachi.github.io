@@ -153,6 +153,9 @@ aside svg:hover {
 body.projects .projects-container {
   @apply gap-x-16 gap-y-16;
 }
+body.projects article img {
+  @apply cursor-zoom-in;
+}
 .projects-container:has(.card:hover) .card:not(:hover) > * {
   @apply transition ease-linear delay-300;
 }
@@ -223,3 +226,26 @@ footer > * {
 /*img {
   max-height: 90vh;
 }*/
+
+/* LIGHTBOX for photo gallery */
+#light-box {
+  @apply gap-0 z-50 pointer-events-none transition-opacity duration-500 opacity-0 w-screen h-screen fixed flex items-center justify-evenly top-0 left-0 right-0 bottom-0 bg-black/90;
+}
+#light-box.active {
+  @apply opacity-100 pointer-events-auto;
+}
+#light-box .image {
+  @apply max-h-[96vh] opacity-100 max-w-full w-auto object-contain transition-transform translate-y-12 duration-500 cursor-zoom-out;
+}
+#light-box.active .image {
+  @apply translate-y-0;
+}
+#light-box .arrow {
+  @apply font-sans flex items-center justify-center h-screen flex-1 text-2xl transition-all p-5 text-white/60 hover:text-white select-none cursor-pointer;
+}
+#light-box #prev {
+  @apply hover:-translate-x-1;
+}
+#light-box #next {
+  @apply hover:translate-x-1;
+}
