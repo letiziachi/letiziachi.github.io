@@ -25,7 +25,11 @@ import { getLocaleByPath, getRelativeLocaleUrl } from "astro:i18n";
   }
 </div>
 
+<!-- G10h4ck: close the menu when the circle is clicked -->
+<label for="my-drawer">
+<!-- Pallino verde visible nella sidebar su mobile al posto del nome -->
 <div class="flex m-6 mb-20 lg:hidden rounded-xl bg-[#00BEB4] h-4 w-4"></div>
+</label>
 
 <ul class="menu menu-md overflow-y-auto">
   { locale === 'it' &&
