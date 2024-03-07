@@ -235,13 +235,13 @@ footer > * {
   @apply opacity-100 pointer-events-auto;
 }
 #light-box .image {
-  @apply max-h-[96vh] opacity-100 max-w-full w-auto object-contain transition-transform translate-y-12 duration-500 cursor-zoom-out;
+  @apply max-h-[96vh] opacity-100 max-w-[calc(100vw-8rem)] w-auto object-contain transition-transform translate-y-12 duration-500 cursor-zoom-out;
 }
 #light-box.active .image {
   @apply translate-y-0;
 }
 #light-box .arrow {
-  @apply font-sans flex items-center justify-center h-screen flex-1 text-2xl transition-all p-5 text-white/60 hover:text-white select-none cursor-pointer;
+  @apply font-sans shrink-0 min-w-6 flex items-center justify-center h-screen flex-1 text-2xl transition-all p-5 text-white/60 hover:text-white select-none cursor-pointer;
 }
 #light-box #prev {
   @apply hover:-translate-x-1;
