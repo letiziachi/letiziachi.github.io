@@ -2,6 +2,6 @@
 // You can import this data from anywhere in your site by using the `import` keyword.
 
 export const SITE_TITLE = 'Letizia Chianello | Portfolio';
-export const SITE_DESCRIPTION = 'Letizia Chianello | Portfolio using Astrofy template';
+export const SITE_DESCRIPTION = 'Letizia Chianello | Direttrice artistica, Fotografa';
 export const GENERATE_SLUG_FROM_TITLE = true
 export const TRANSITION_API = true
