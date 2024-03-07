@@ -7,6 +7,7 @@
 <script is:inline>
   const article = document.querySelector("main>article");
   const sideleft = document.querySelector(".drawer-side");
+  const mobileHeader = document.querySelector("#mobile-header");
   const images = document.querySelectorAll("main>article>a>img");
 
   const lightbox = document.querySelector("#light-box");
@@ -18,6 +19,7 @@
 
   function toggleLightbox() {
     sideleft.classList.toggle("!-translate-x-full");
+    mobileHeader.classList.toggle("!-translate-y-full");
     article.classList.toggle("pointer-events-none");
     lightbox.classList.toggle("active");
   }
