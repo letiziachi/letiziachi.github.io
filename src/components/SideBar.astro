@@ -4,7 +4,7 @@ import SideBarMenu from "./SideBarMenu.astro";
 const { sideBarActiveItemID } = Astro.props;
 ---
 
-<div class="drawer-side z-40">
+<div class="drawer-side z-40 transition-transform">
   <label for="my-drawer" class="drawer-overlay"></label>
   <aside class="h-auto min-h-full w-[19rem] text-base-content flex flex-col">
     <SideBarMenu sideBarActiveItemID={sideBarActiveItemID} />

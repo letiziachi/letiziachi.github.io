@@ -1,0 +1,59 @@
+<div id="light-box">
+  <span class="arrow" id="prev">←</span>
+  <img class="image" alt="Immagine non trovata" />
+  <span class="arrow" id="next">→</span>
+</div>
+
+<script is:inline>
+  const article = document.querySelector("main>article");
+  const sideleft = document.querySelector(".drawer-side");
+  const mobileHeader = document.querySelector("#mobile-header");
+  const images = document.querySelectorAll("main>article>a>img");
+
+  const lightbox = document.querySelector("#light-box");
+  const lightbox_image = document.querySelector("#light-box>.image");
+  const lightbox_prev = document.querySelector("#light-box>#prev");
+  const lightbox_next = document.querySelector("#light-box>#next");
+
+  var currentIndex = 0;
+
+  function toggleLightbox() {
+    sideleft.classList.toggle("!-translate-x-full");
+    mobileHeader.classList.toggle("!-translate-y-full");
+    article.classList.toggle("pointer-events-none");
+    lightbox.classList.toggle("active");
+  }
+
+  function setLightbox(image, index) {
+    lightbox_image.setAttribute("src", image);
+
+    // Update data-src attributes for lightbox_prev and lightbox_next
+    var prevIndex = (index - 1 + images.length) % images.length;
+    var nextIndex = (index + 1) % images.length;
+    lightbox_prev.setAttribute("data-src", images[prevIndex].src);
+    lightbox_next.setAttribute("data-src", images[nextIndex].src);
+
+    currentIndex = index;
+  }
+
+  lightbox_image.addEventListener("click", toggleLightbox);
+  lightbox_prev.addEventListener("click", () => {
+    setLightbox(
+      images[(currentIndex - 1 + images.length) % images.length].src,
+      currentIndex - 1,
+    );
+  });
+  lightbox_next.addEventListener("click", () => {
+    setLightbox(
+      images[(currentIndex + 1) % images.length].src,
+      currentIndex + 1,
+    );
+  });
+
+  images.forEach((image, index) => {
+    image.addEventListener("click", () => {
+      setLightbox(image.src, index);
+      toggleLightbox();
+    });
+  });
+</script>

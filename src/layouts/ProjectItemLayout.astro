@@ -1,6 +1,7 @@
 ---
 import { type projectSchema } from "../content/config";
 import BaseLayout from "./BaseLayout.astro";
+import Lightbox from "../components/Lightbox.astro";
 import dayjs from "dayjs";
 import localizedFormat from "dayjs/plugin/localizedFormat";
 
@@ -22,9 +23,9 @@ const displayDate = dayjs(updatedDate).format("ll");
 import { Image } from "astro:assets";
 ---
 
-<BaseLayout title={title} description={description} image={coverImage}>
+<BaseLayout title={title} description={description} image={coverImage} sideBarActiveItemID="projects">
   <main>
-    <article class="flex flex-col items-center gap-20">
+    <article class="flex flex-col items-center gap-20" id="project-content">
       <div class="flex flex-col mx-auto shrink">
         <div class="w-auto mx-0 shrink mb-4 flex">
           <h1 class="title my-2 text-2xl font-bold flex items-center">
@@ -45,15 +46,19 @@ import { Image } from "astro:assets";
 
       {
         images.map((image) => (
-          <Image src={image} alt={title}
-                  class="max-h-[96vh] max-w-full w-auto object-contain" />
+          <a data-src={image.src}>
+            <Image src={image} alt={title} class="max-h-[96vh] max-w-full w-auto object-contain" />
+          </a>
         ))
       }
+
     </article>
   </main>
 
-  <script>
-      ScrollReveal().reveal('img,p');
+  <script is:inline>
+    ScrollReveal().reveal('img,p');
   </script>
+  
+  <Lightbox />
 
 </BaseLayout>
