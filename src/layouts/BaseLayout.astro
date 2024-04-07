@@ -20,16 +20,17 @@ const {
   includeSidebar = true,
   sideBarActiveItemID,
   ogType,
+  locale = Astro.currentLocale
 } = Astro.props;
 ---
 
 <!doctype html>
-<html lang="it" data-theme="lofi">
+<html lang={locale} data-theme="lofi">
   <head>
     <BaseHead title={title} description={description} image={image} , ogType={ogType} />
     {TRANSITION_API && <ViewTransitions />}
   </head>
-  <body class={sideBarActiveItemID}>
+  <body class={sideBarActiveItemID} data-lang={locale}>
     <div class="drawer lg:drawer-open">
       <input id="my-drawer" type="checkbox" class="drawer-toggle" />
       <div class="drawer-content">

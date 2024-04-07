@@ -1,27 +1,29 @@
 ---
 import BaseLayout from "../../layouts/BaseLayout.astro";
 import { Image } from "astro:assets";
+
+import fotoLetiziaPortrait from "../../images/contatti/01-Portrait_ritratto_Letizia_Chianello_photographer_fotografia_Sicilia_natureabito_dress_max_mara_love_pois.JPG";
+import fotoFichiIndiaMare from  "../../images/contatti/02-Sicilia_mare_sea_fichidindia_prickly_pear_cactus_pear_mare_letizia_chianello_olympus_omsystem_om1_12_40_mm_pro.jpg";
 ---
 
 <BaseLayout title="contact" sideBarActiveItemID="contact">
-  <div class="flex flex-row-reverse items-center justify-between h-full w-full gap-8">
-    <div class="flex flex-col items-center">
-      <p class="mb-8">
-        <a href="mailto:hola@letiziachianello.com">Hola@letiziachianello.com</a><br>
-        <a href="tel:+39377684I298">+39 377 684I298</a>
-      </p>
-      
-      <div>
-        <Image format="avif" width={282} height={424} src="/contact-1.avif" alt="image" />
-      </div>
+  <div class="flex flex-col lg:flex-row items-center h-full w-full gap-8">
+    <div class="flex-1 lg:ml-[10vh]">
+      <Image src={fotoLetiziaPortrait} alt="Foto ritratto Letizia Chianello"
+             class="max-h-[90vh] w-auto object-contain" />
     </div>
-    
-    <div class="flex flex-col items-center">
-      <div>
-        <Image format="avif" width={415} height={555} src="/contact-1.avif" alt="image" />
+
+    <div class="flex-1 lg:mr-[10vh] flex flex-col items-center gap-1">
+      <p class="2xl:text-xl text-[#000000]">
+        <a href="mailto:hola@letiziachianello.com">hola@letiziachianello.com</a>
+      </p>
+
+
+      <div class="mt-6 mb-6">
+        <Image src={fotoFichiIndiaMare} alt="Foto fichi d'india al mare" />
       </div>
       
-      <p class="mt-8">Hola luna</p>
+      <p><i>Danzano i fichidindia al mare</i></p>
     </div>
   </div>
 </BaseLayout>

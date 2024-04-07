@@ -1,6 +1,7 @@
 ---
 const {
   title,
+  title_es,
   coverImage,
   url,
   badge,
@@ -26,7 +27,8 @@ const projectCollection = await getCollection("projects");
       }
       <div class="w-full p-0 mt-2">
         <h1 class="text-base 2xl:text-lg font-bold flex flex-row items-center justify-between">
-          {title}
+          <content-it>{title}</content-it>
+          <content-es>{title_es}</content-es>
           {badge && <div class="badge badge-secondary mx-2">{badge}</div>}
         </h1>
         <!-- {desc && <p class="py-1 text-1xl">{desc}</p>} -->

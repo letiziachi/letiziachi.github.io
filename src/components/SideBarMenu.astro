@@ -4,31 +4,37 @@ import { getLocaleByPath, getRelativeLocaleUrl } from "astro:i18n";
 ---
 
 <div class="hidden lg:flex font-serif-bold p-6 grow flex-col justify-center">
-  <a data-astro-reload
-    href={getRelativeLocaleUrl(locale, "/")}
-    class="text-[#00BEB4] font-bold text-3xl name"
-  >
-    Letizia <br />
-    Chianello
-  </a>
-
-  { locale === 'it' && 
+  
+  { locale === 'it' &&
+    <a data-astro-reload
+      href={getRelativeLocaleUrl(locale, "/")}
+      class="text-[#00BEB4] font-bold text-3xl name">
+      Letizia <br />
+      Chianello
+    </a>
     <h5 class="font-medium text-lg leading-tight mt-4">
       Direttrice artistica, <br />
       Fotografa
     </h5>
-  } { locale === 'es' &&
+  }
+  { locale === 'es' &&
+    <a data-astro-reload
+      href={"/" + getLocaleByPath("es")}
+      class="text-[#00BEB4] font-bold text-3xl name">
+      Letizia <br />
+      Chianello
+    </a>
     <h5 class="font-medium text-lg leading-tight mt-4">
       Directora artística, <br />
       Fotógrafo
     </h5>
-  }
+  } 
 </div>
 
 <!-- G10h4ck: close the menu when the circle is clicked -->
-<label for="my-drawer">
 <!-- Pallino verde visible nella sidebar su mobile al posto del nome -->
-<div class="flex m-6 mb-20 lg:hidden rounded-xl bg-[#00BEB4] h-4 w-4"></div>
+<label for="my-drawer">
+  <div class="flex m-6 mb-20 lg:hidden rounded-xl bg-[#00BEB4] h-4 w-4"></div>
 </label>
 
 <ul class="menu menu-md overflow-y-auto">
@@ -38,7 +44,7 @@ import { getLocaleByPath, getRelativeLocaleUrl } from "astro:i18n";
     <li><a id="bio" href={getRelativeLocaleUrl(locale, "bio")} data-astro-reload>Bio</a></li>
     <li><a id="info" href={getRelativeLocaleUrl(locale, "info")}>Info</a></li>
     <li><a id="contact" href={getRelativeLocaleUrl(locale, "contact")}>Contatti</a></li> 
-    <li><a id={locale} class="mt-4 italic hidden" href={"/" + getLocaleByPath("es")} data-astro-reload>Español</a></li>
+    <li><a id={locale} class="mt-4 italic" href={"/" + getLocaleByPath("es")} data-astro-reload>Español</a></li>
   }
   { locale === 'es' &&
     <li><a id="home" href="/" class="!hidden" data-astro-reload>Home</a></li>

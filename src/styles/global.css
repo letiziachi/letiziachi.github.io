@@ -149,6 +149,16 @@ aside svg:hover {
   @apply bg-black/50 transition-colors;
 }
 
+/* MULTILANG */
+html[lang=it] content-es,
+html[lang=es] content-it {
+  @apply hidden;
+}
+content-es p,
+content-it p {
+  @apply mb-5 mx-auto max-w-[600px];
+}
+
 /* PROJECTs */
 body.projects .projects-container {
   @apply gap-x-16 gap-y-16;
