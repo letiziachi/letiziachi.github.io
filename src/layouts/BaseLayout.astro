@@ -35,7 +35,7 @@ const {
       <input id="my-drawer" type="checkbox" class="drawer-toggle" />
       <div class="drawer-content">
         <Header title={SITE_TITLE} />
-        { (currentPath === "/" || currentPath === "/es") && <Hero /> }
+        { (currentPath === "/" || currentPath === "/es" || currentPath === "/es/") && <Hero /> }
         <div class="md:flex md:justify-center w-full">
           <main transition:animate="fade"
               class="p-6 pt-10 max-w-[100vw] w-full">

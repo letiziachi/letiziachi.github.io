@@ -3,7 +3,7 @@ const currentPath = Astro.url.pathname;
 ---
 
 <!-- Messo sopra (rispetto ai design) per evitare che si spostino quando si cambia pagina, lo slideshow e' attivo solo in home -->
-{ (currentPath === "/" || currentPath === "/es")  &&
+{ (currentPath === "/" || currentPath === "/es" || currentPath === "/es/")  &&
   <div class="transition-opacity w-full flex items-center pl-4 cursor-pointer font-black text-2xl h-0 overflow-visible">
     <span class="font-extralight font-sans transition-transform hover:translate-y-1 p-3 pb-5" id="prev">←</span>
     <span class="font-extralight font-sans transition-transform hover:translate-y-1 p-3 pb-5" id="next">→</span>
