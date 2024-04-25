@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export PROJECT_INDEX=70
+export PROJECT_INDEX=16
 export IMAGES_SOURCE_DIR="/media/letizia/SEAGATE_BASIC_5TB/2024-SICILIA/2024-01-01-Mistretta_Matri_Tagghiavia_Tribbu/Selezione/"
 export PROJECT_TITLE="La Pampa di Tagghjavia"
 export PROJECT_SEO="pampa gioco educazione bambini natura montessori Sicilia Monti Nebrodi pecore mandria lana dupareilaumeme abbigliamento Affenzahn zainetto eco-friendly riciclo sostenibile Olympus OM1"
