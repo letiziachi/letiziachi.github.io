@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export PROJECT_INDEX=16
+export PROJECT_INDEX=70
 export IMAGES_SOURCE_DIR="/home/letizia/01-PROGETTI-FOTOGRAFIA/Festival_Titeres_2023/"
 export PROJECT_TITLE="Festival Internacional de Títeres PAN Y VINO | Edizione 2023"
 export PROJECT_SEO="Festival titeres argentina cordoba teatro di figura marionette spettacoli jose de la quintana clown famiglia familia"
