@@ -11,17 +11,15 @@ source ../projects_utils.sh
 function imagesList()
 {
 	cat << ENDLIST
-01-Cipolle_Freddi_Logo_design.png
+01-Cipolle_Freddi_testata_sito_web_design.png
 02-Freddi-cipollina-borettana-emilia-freddi-retina.jpg
-03-Freddi_Cipollina_borettana_Emilia_Romagna.png
-04-Freddi-scalogno-emilia-freddi-retina.jpg
-05-Freddi_Scalogno_Emilia_Romagna.png
-06-Cipolle_Freddi_testata_sito_web_design.png
+03-Freddi-scalogno-emilia-freddi-retina.jpg
+04-Cipolle_Freddi_testata_sito_web_design.png
+05-Freddi_Cipollina_borettana_Emilia_Romagna.png
+06-Freddi_Scalogno_Emilia_Romagna.png
 07-Freddi_ricette_Scalogno_Cipolline_borettane_Emilia_Romagna.png
-08-Freddi_Post_grafci_Scalogno_Cipollina_Emilia_Romagna.png
-09-Freddi_copertina_pagina_facebook_Cipolline_borettane_ricette.jpg
-10-Freddi_copertina_pagina_facebook_Cipolline_borettane_stufate.jpg
-11-Freddi_copertina_pagina_facebook_Cipolline_borettane_in_vaso.jpg
+08-Freddi_Post_grafci_Scalogno_Cipollina_Emilia_Romagna_02.png
+09-Freddi_copertine_pagina_facebook.png
 ENDLIST
 }
 
