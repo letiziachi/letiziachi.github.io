@@ -1,5 +1,6 @@
 #!/bin/bash
 
+
 export PROJECT_INDEX=61
 export IMAGES_SOURCE_DIR="/home/letizia/01-PROGETTI-FOTOGRAFIA/Pelle_di_madre/Selezione/"
 export PROJECT_TITLE="Il profondo è la pelle"
@@ -12,9 +13,7 @@ function imagesList()
 {
 	cat << ENDLIST
 00-P2181333.jpg
-00-PA023363.jpg
 01-PA023286.jpg
-02-PA023346.JPG
 03-PA210525.JPG
 04-P8102399.JPG
 05-P8102331.JPG
@@ -27,7 +26,6 @@ function imagesList()
 13-P8102430.jpg
 16-PA210532.JPG
 17-P5200218.jpg
-24-PA023345.JPG
 25-P5200200.jpg
 30-PA023309.jpg
 31-PA023312.JPG
@@ -35,7 +33,6 @@ function imagesList()
 33-PA023300.JPG
 34-P8102424.jpg
 39-P5200202.jpg
-40-PA023282.jpg
 40-PA023347.JPG
 41-P8102402.JPG
 42-P8102404.jpg
