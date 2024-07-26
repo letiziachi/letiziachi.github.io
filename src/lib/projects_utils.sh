@@ -127,7 +127,7 @@ function updateProjectFile()
 ---
 title: "$PROJECT_TITLE"
 description: ""
-updatedDate: "$(date "+%b %d %Y")"
+updatedDate: "$(LC_TIME=en_US.utf8 date "+%b %d %Y")"
 coverImage: "../../images/projects/$(projectFileName)/$(imageSeoName "$COVER_IMAGE" 0)"
 images: $(bashArrToAstro PROJECT_UTILS_IMAGES_LIST_OUTPUT)
 badge: ""
