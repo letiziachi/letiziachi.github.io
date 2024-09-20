@@ -14,6 +14,7 @@ function define_default_value()
 define_default_value PROJECT_INDEX 0
 define_default_value PROJECT_TITLE ""
 define_default_value PROJECT_SEO ""
+define_default_value PROJECT_CATEGORY "photography" # photography | communication
 define_default_value COVER_IMAGE "UNDEFINED COVER IMAGE"
 define_default_value IMAGES_SOURCE_DIR "UNDEFINED IMAGE SOURCE DIR"
 define_default_value IMAGES_PUBLIC_EXTENSION "jpg"
@@ -24,12 +25,12 @@ export PROJECT_UTILS_IMAGES_LIST_OUTPUT=()
 
 function projectsMdDir()
 {
-	realpath "${PROJECT_UTILS_SRC_DIR}/../content/projects/"
+	realpath "${PROJECT_UTILS_SRC_DIR}/../content/${PROJECT_CATEGORY}/"
 }
 
 function projectsImagesDir()
 {
-	realpath "${PROJECT_UTILS_SRC_DIR}/../images/projects/"
+	realpath "${PROJECT_UTILS_SRC_DIR}/../images/${PROJECT_CATEGORY}/"
 }
 
 function imagesList()
@@ -107,7 +108,7 @@ function compressAllImages()
 			"${IMAGES_SOURCE_DIR}/$mImage" \
 			"$(collectionDir)/$outImgName"
 
-		PROJECT_UTILS_IMAGES_LIST_OUTPUT+=("\"../../images/projects/$(projectFileName)/$outImgName\"")
+		PROJECT_UTILS_IMAGES_LIST_OUTPUT+=("\"../../images/${PROJECT_CATEGORY}/$(projectFileName)/$outImgName\"")
 	done
 }
 
@@ -128,7 +129,7 @@ function updateProjectFile()
 title: "$PROJECT_TITLE"
 description: ""
 updatedDate: "$(LC_TIME=en_US.utf8 date "+%b %d %Y")"
-coverImage: "../../images/projects/$(projectFileName)/$(imageSeoName "$COVER_IMAGE" 0)"
+coverImage: "../../images/${PROJECT_CATEGORY}/$(projectFileName)/$(imageSeoName "$COVER_IMAGE" 0)"
 images: $(bashArrToAstro PROJECT_UTILS_IMAGES_LIST_OUTPUT)
 badge: ""
 customCssClass: ""
@@ -155,7 +156,7 @@ function generateProject()
 
 function indexReport()
 {
-	pushd "${PROJECT_UTILS_SRC_DIR}/projects"
+	pushd "${PROJECT_UTILS_SRC_DIR}/${PROJECT_CATEGORY}"
 	for mProj in *.sh ;  do
 		source $mProj
 		echo $(printf '\n%04d' $PROJECT_INDEX) $PROJECT_TITLE
@@ -165,8 +166,8 @@ function indexReport()
 
 function usedIndexes()
 {
-	pushd projects
-	for mProj in "${PROJECT_UTILS_SRC_DIR}/projects"/*.sh ;  do
+	pushd ${PROJECT_CATEGORY}
+	for mProj in "${PROJECT_UTILS_SRC_DIR}/${PROJECT_CATEGORY}"/*.sh ;  do
 		source $mProj
 		echo $(printf '\n%04d' $PROJECT_INDEX)
 	done | sort -n -u
@@ -175,7 +176,7 @@ function usedIndexes()
 
 function haveDuplicatedIndexes()
 {
-	pushd "${PROJECT_UTILS_SRC_DIR}/projects"
+	pushd "${PROJECT_UTILS_SRC_DIR}/${PROJECT_CATEGORY}"
 	local unsortedIndexes="$(
 		for mProj in *.sh ;  do
 			source $mProj
@@ -213,7 +214,7 @@ function updateAllProjects()
 {
 	cleanProjects
 
-	pushd "${PROJECT_UTILS_SRC_DIR}/projects"
+	pushd "${PROJECT_UTILS_SRC_DIR}/${PROJECT_CATEGORY}"
 	for mProj in *.sh ;  do
 		./$mProj
 	done

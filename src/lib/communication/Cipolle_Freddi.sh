@@ -3,6 +3,7 @@
 export PROJECT_INDEX=60
 export IMAGES_SOURCE_DIR="/media/letizia/SEAGATE_BASIC_5TB/Progetti_grafici_per_sito/01-CIpolle_Freddi/Da_caricare/"
 export PROJECT_TITLE="Freddi | Identità visiva"
+export PROJECT_CATEGORY="communication"
 export PROJECT_SEO="Freddi_cipolle_cipolline_emilia_romagna_scalogno_italiano_food_identita_visiva"
 export COVER_IMAGE="Freddi-cipolle-borettane-peperoni-acciuga-freddi.jpg"
 
