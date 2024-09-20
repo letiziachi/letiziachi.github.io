@@ -4,7 +4,7 @@ import type { projectSchema } from "../../content/config";
 import ProjectItemLayout from "../../layouts/ProjectItemLayout.astro";
 
 export async function getStaticPaths() {
-  const itemEntries = await getCollection("projects");
+  const itemEntries = await getCollection("communication");
   return itemEntries.map((entry) => ({
     params: { slug: entry.slug },
     props: { entry },
@@ -12,7 +12,7 @@ export async function getStaticPaths() {
 }
 
 interface Props {
-  entry: CollectionEntry<"projects">;
+  entry: CollectionEntry<"communication">;
 }
 
 const { entry } = Astro.props;

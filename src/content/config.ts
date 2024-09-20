@@ -17,5 +17,6 @@ export type projectSchema = z.infer<typeof projectSchema>;
 const projectCollection = defineCollection({ schema: projectSchema });
 
 export const collections = {
-    'projects': projectCollection
+    'photography': projectCollection,
+    'communication': projectCollection
 }

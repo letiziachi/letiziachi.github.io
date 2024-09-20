@@ -2,8 +2,8 @@
 title: "Emanuela Spaggiari | Identità visiva"
 description: ""
 updatedDate: "apr 26 2024"
-coverImage: "../../images/projects/0075-Emanuela_Spaggiari___Identit___visiva/0000-Emanuela_Spaggiari___Identit___visiva_Logo_design_brand_identity_identita_visiva_consulenza_aziende_marketing_strategia.jpg"
-images: ["../../images/projects/0075-Emanuela_Spaggiari___Identit___visiva/0001-Emanuela_Spaggiari___Identit___visiva_Logo_design_brand_identity_identita_visiva_consulenza_aziende_marketing_strategia.jpg","../../images/projects/0075-Emanuela_Spaggiari___Identit___visiva/0002-Emanuela_Spaggiari___Identit___visiva_Logo_design_brand_identity_identita_visiva_consulenza_aziende_marketing_strategia.jpg","../../images/projects/0075-Emanuela_Spaggiari___Identit___visiva/0003-Emanuela_Spaggiari___Identit___visiva_Logo_design_brand_identity_identita_visiva_consulenza_aziende_marketing_strategia.jpg","../../images/projects/0075-Emanuela_Spaggiari___Identit___visiva/0004-Emanuela_Spaggiari___Identit___visiva_Logo_design_brand_identity_identita_visiva_consulenza_aziende_marketing_strategia.jpg"]
+coverImage: "../../images/communication/0075-Emanuela_Spaggiari___Identit___visiva/0000-Emanuela_Spaggiari___Identit___visiva_Logo_design_brand_identity_identita_visiva_consulenza_aziende_marketing_strategia.jpg"
+images: ["../../images/communication/0075-Emanuela_Spaggiari___Identit___visiva/0001-Emanuela_Spaggiari___Identit___visiva_Logo_design_brand_identity_identita_visiva_consulenza_aziende_marketing_strategia.jpg","../../images/communication/0075-Emanuela_Spaggiari___Identit___visiva/0002-Emanuela_Spaggiari___Identit___visiva_Logo_design_brand_identity_identita_visiva_consulenza_aziende_marketing_strategia.jpg","../../images/communication/0075-Emanuela_Spaggiari___Identit___visiva/0003-Emanuela_Spaggiari___Identit___visiva_Logo_design_brand_identity_identita_visiva_consulenza_aziende_marketing_strategia.jpg","../../images/communication/0075-Emanuela_Spaggiari___Identit___visiva/0004-Emanuela_Spaggiari___Identit___visiva_Logo_design_brand_identity_identita_visiva_consulenza_aziende_marketing_strategia.jpg"]
 badge: ""
 customCssClass: ""
 ---
