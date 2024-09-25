@@ -16,6 +16,7 @@ const {
   badge,
   custom_link,
   custom_link_label,
+  customImageFormat,
 } = Astro.props;
 
 dayjs.extend(localizedFormat);
@@ -47,7 +48,9 @@ import { Image } from "astro:assets";
       {
         images.map((image) => (
           <a data-src={image.src}>
-            <Image src={image} alt={title} class="max-h-[96vh] max-w-full w-auto object-contain" />
+            <Image
+              src={image} alt={title} format={customImageFormat}
+              class="max-h-[96vh] max-w-full w-auto object-contain" />
           </a>
         ))
       }

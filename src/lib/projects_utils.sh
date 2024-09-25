@@ -13,12 +13,10 @@ function define_default_value()
 
 define_default_value PROJECT_INDEX 0
 define_default_value PROJECT_TITLE ""
-define_default_value PROJECT_SEO ""
 define_default_value PROJECT_CATEGORY "photography" # photography | communication
 define_default_value COVER_IMAGE "UNDEFINED COVER IMAGE"
 define_default_value IMAGES_SOURCE_DIR "UNDEFINED IMAGE SOURCE DIR"
-define_default_value IMAGES_PUBLIC_EXTENSION "jpg"
-define_default_value IMAGES_MAX_FILE_SIZE "1200kb"
+define_default_value IMAGES_CUSTOM_FORMAT ""
 
 export PROJECT_UTILS_SRC_DIR="$(realpath $(dirname $BASH_SOURCE)/)"
 export PROJECT_UTILS_IMAGES_LIST_OUTPUT=()
@@ -58,14 +56,6 @@ function collectionDir()
 	echo "$(projectsImagesDir)/$(projectFileName)/"
 }
 
-function imageSeoName()
-{
-	local origName="$1"
-	local imageIndex="$2"
-
-	echo -n "$(printf '%04d' $imageIndex)-$(sanitizeForFileName $PROJECT_TITLE $PROJECT_SEO).$IMAGES_PUBLIC_EXTENSION"
-}
-
 function compressImage()
 {
 	local sourceImage="$1"
@@ -89,30 +79,25 @@ function compressImage()
 		"$sourceImage" "$destImage"
 }
 
-function compressAllImages()
+
+function imagesPathsList()
 {
-	mkdir -p "$(collectionDir)"
-
-	tIndex=0
-
-	compressImage \
-		"${IMAGES_SOURCE_DIR}/$COVER_IMAGE" \
-		"$(collectionDir)/$(imageSeoName "$COVER_IMAGE" 0)"
-
-	for mImage in $(imagesList); do
-		((tIndex++))
-
-		local outImgName="$(imageSeoName "$mImage" $tIndex)"
-
-		compressImage \
-			"${IMAGES_SOURCE_DIR}/$mImage" \
-			"$(collectionDir)/$outImgName"
-
-		PROJECT_UTILS_IMAGES_LIST_OUTPUT+=("\"../../images/${PROJECT_CATEGORY}/$(projectFileName)/$outImgName\"")
+	for mImage in $(imagesList) ; do
+		echo "../../images/${PROJECT_CATEGORY}/${IMAGES_SOURCE_DIR}/${mImage}"
 	done
 }
 
-function bashArrToAstro()
+function listToAstroArray()
+{
+	echo -n [
+	while read mLine ; do
+		printf "%s," "$mLine"
+	# sed removes last char which is a superflous comma that make astro mad
+	done | sed '$ s/.$//'
+	echo -n ]
+}
+
+function bashArrayToAstro()
 {
 	declare -n bashArrayName="$1"
 
@@ -129,8 +114,9 @@ function updateProjectFile()
 title: "$PROJECT_TITLE"
 description: ""
 updatedDate: "$(LC_TIME=en_US.utf8 date "+%b %d %Y")"
-coverImage: "../../images/${PROJECT_CATEGORY}/$(projectFileName)/$(imageSeoName "$COVER_IMAGE" 0)"
-images: $(bashArrToAstro PROJECT_UTILS_IMAGES_LIST_OUTPUT)
+coverImage: "../../images/${PROJECT_CATEGORY}/${IMAGES_SOURCE_DIR}/${COVER_IMAGE}"
+images: $(imagesPathsList | listToAstroArray)
+customImageFormat: "$IMAGES_CUSTOM_FORMAT"
 badge: ""
 customCssClass: ""
 ---
@@ -142,15 +128,12 @@ EOF
 function cleanIndex()
 {
 	local pIndex="$1"
-
 	rm -fv "$(projectsMdDir)"/$(printf '%04d' $PROJECT_INDEX)*.md
-	rm -rfv "$(projectsImagesDir)"/$(printf '%04d' $PROJECT_INDEX)*
 }
 
 function generateProject()
 {
 	cleanIndex
-	compressAllImages
 	updateProjectFile
 }
 
@@ -191,29 +174,8 @@ function haveDuplicatedIndexes()
 	[ "$iSorted" != "$iSortedUnique" ] || false
 }
 
-function cleanProjects()
-{
-	local mUsedIndexes="$(usedIndexes)"
-
-	pushd "$(projectsImagesDir)"
-	for mCollection in +([0123456789])* ; do
-		echo "$mUsedIndexes" | grep -q "${mCollection:0:4}" || \
-			rm -rv "$mCollection"
-	done
-	popd
-
-	pushd "$(projectsMdDir)"
-	for mFile in +([0123456789])*.md ; do
-		echo "$mUsedIndexes" | grep -q "${mFile:0:4}" || \
-			rm -rv "$mFile"
-	done
-	popd
-}
-
 function updateAllProjects()
 {
-	cleanProjects
-
 	pushd "${PROJECT_UTILS_SRC_DIR}/${PROJECT_CATEGORY}"
 	for mProj in *.sh ;  do
 		./$mProj

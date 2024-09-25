@@ -9,7 +9,8 @@ const projectSchema = ({ image }) => z.object({
     badge: z.string().optional(),
     images: z.array(image()),
     coverImage: image(),
-    customCssClass: z.string().optional()
+    customCssClass: z.string().optional(),
+    customImageFormat: z.string().optional()
 });
 
 export type projectSchema = z.infer<typeof projectSchema>;
