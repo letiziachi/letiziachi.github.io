@@ -2,7 +2,7 @@
 
 export PROJECT_INDEX=8
 export IMAGES_SOURCE_DIR="0008-Foto_Bosco_Caronia_Funghi"
-export PROJECT_TITLE="Miconauti. La gioia di esplorare il bosco."
+export PROJECT_TITLE="Miconauti. La gioia di esplorare il bosco"
 export PROJECT_SEO="Sicilia gioco natura bosco monti nebrodi funghi porcini micologia ovuli bambini ottobre Olympus OM1"
 export COVER_IMAGE="07-PA040267-1-fungo-viola-Cortinarius_violaceus.JPG"
 

@@ -1,5 +1,5 @@
 ---
-title: "Miconauti. La gioia di esplorare il bosco."
+title: "Miconauti. La gioia di esplorare il bosco"
 description: ""
 updatedDate: "Jan 12 2025"
 coverImage: "../../images/photography/0008-Foto_Bosco_Caronia_Funghi/07-PA040267-1-fungo-viola-Cortinarius_violaceus.JPG"
