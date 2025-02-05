@@ -27,8 +27,8 @@ dependencies:
     specifier: ^1.11.9
     version: 1.11.9
   sharp:
-    specifier: ^0.32.6
-    version: 0.32.6
+    specifier: ^0.33.3
+    version: 0.33.3
   tailwindcss:
     specifier: ^3.3.5
     version: 3.3.5
