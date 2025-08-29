@@ -12,7 +12,7 @@ customCssClass: ""
 Una mattina che comincia tra i rovi. Con Gio decidiamo di raccogliere le prime more,  
 così le dita si tingono di viola e il sapore dolce indugia a lungo in bocca.  
 Rientrando a casa penso già a una galette, questa volta dedicata a chi incontreremo nel pomeriggio.  
-Sono Martin e Valérie, persone che hanno saputo riconoscere nei Nebrodi una bellezza unica,  
+Sono Martin Martin Declève e Valérie Verdinne, persone che hanno saputo riconoscere nei Nebrodi una bellezza unica,  
 tanto da fermarsi qui e scegliere di custodire un’antica dimora nobiliare, densa di storia e fascino.  
 Scrivo a Martin e verso sera li raggiungiamo. Li troviamo ancora intenti a riordinare e pulire,  
 ma il loro sorriso è luce di empatia e accoglienza sincera. È allora che ci raccontano di
@@ -39,5 +39,5 @@ Così questa prima iniziativa diventa un invito al ritrovo, alla scoperta della 
 
 Qui, una selezione degli scatti che vuole restituire il succo di questa esperienza preziosa e condivisa.
 -
-Régis Baudy, Sébastien Bonin, Alessandro Costanzo, Étienne Courtois, Martin Dècleve, Myriam El Haïk, Laurent Friob, Anna Guillot,  
+Régis Baudy, Sébastien Bonin, Alessandro Costanzo, Étienne Courtois, Martin Declève, Myriam El Haïk, Laurent Friob, Anna Guillot,  
 Sebastiano Leta, Renee Marcus Janssen, Emmanuel Piron, Rawakari, Agostino Rocco, Alfredo Sciuto.
