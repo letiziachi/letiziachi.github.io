@@ -107,6 +107,49 @@ function bashArrayToAstro()
 	echo -n ]
 }
 
+function checkFileNameLenght()
+{
+	local pFileName="$1"
+
+	# Github deploy action fail with long file names, even if it works on your
+	# local computer. Use this function to prevent ENAMETOOLONG error with each
+	# image or file you want to embad on your website.
+	#
+	# example error:
+	# 21:01:14 [build] Building static entrypoints...
+	# Error: 1 [ERROR] [vite] x Build failed in 6.09s
+	# ENAMETOOLONG: name too long, open '/home/runner/work/letiziachi.github.io/letiziachi.github.io/dist/_astro/24-Dimora_nobiliare-Natoli-villa-Mostra-Opening-inaugurazione_collettiva_artistica-DDT_Project-Romei-Mistretta-Messina-arte_comtemporanea-dimora_nobiliare-villa-panorama-opere-buffet-gourmet-chef-Regis_Baudy-tessere_ceramica_raku-Sebastiano_Leta.BhbnOnik.JPG'
+	#   Location:
+	#     /home/runner/work/letiziachi.github.io/letiziachi.github.io/node_modules/.pnpm/rollup@4.49.0/node_modules/rollup/dist/es/shared/node-entry.js:22505:32
+	#   Stack trace:
+	#     at async open (node:internal/fs/promises:639:25)
+	#     at async Queue.work (file:///home/runner/work/letiziachi.github.io/letiziachi.github.io/node_modules/.pnpm/rollup@4.49.0/node_modules/rollup/dist/es/shared/node-entry.js:22505:32)
+	#  ELIFECYCLE  Command failed with exit code 1.
+	# Error: Process completed with exit code 1.
+
+	# Determined via trial and error, don't edit before thinking twice
+	local GITHUB_DEPLOY_MAX_FILE_NAME_SAFE_LENGHT=239
+
+	local mNameLength="$(echo "$pFileName" | wc -c)"
+	[  "$mNameLength" -gt "$GITHUB_DEPLOY_MAX_FILE_NAME_SAFE_LENGHT" ] &&
+	{
+		echo "Nome del file troppo lungo $mNameLength > $GITHUB_DEPLOY_MAX_FILE_NAME_SAFE_LENGHT:"
+		echo "$pFileName"
+		return 36 # ENAMETOOLONG
+	}
+
+	return 0
+}
+
+function projectChecks()
+{
+	checkFileNameLenght "$COVER_IMAGE" || exit $?
+
+	imagesList | while read mLine; do
+		checkFileNameLenght $mLine || exit $?
+	done
+}
+
 function updateProjectFile()
 {
 	cat << EOF > "$(projectsMdDir)/$(projectFileName).md"
@@ -133,6 +176,7 @@ function cleanIndex()
 
 function generateProject()
 {
+	projectChecks || exit $?
 	cleanIndex
 	updateProjectFile
 }
