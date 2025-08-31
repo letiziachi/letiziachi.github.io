@@ -69,7 +69,7 @@ tanto da fermarsi qui e scegliere di custodire un’antica dimora nobiliare, den
 Scrivo a Martin e verso sera li raggiungiamo. Li troviamo ancora intenti a riordinare e pulire,  
 ma il loro sorriso è luce di empatia e accoglienza sincera. È allora che ci raccontano di
 <a href="https://www.instagram.com/d.d.t._project/" target="_blank">DDT Project</a> e della preparazione  
-della loro prima esposizione collettiva pensata per legare il passato al contemporaneo, intrecciando  
+della loro prima esposizione collettiva pensata per legare il passato al contemporaneo, intersecando  
 memoria storica e nuovi sguardi.  
 
 Prima di lasciare questa regale dimora è un progetto che trasforma le Case Natoli, abbandonate da decenni,  
@@ -87,7 +87,7 @@ in un linguaggio, che collega retaggi del passato al contemporaneo.
 Sul davanzale di una finestra una scritta lasciata nel 1903: parole di ringraziamento semplici, ma ancora oggi vibranti. Una in particolare  
 mi resta impressa, antica e quasi dimenticata: svisceratamente. Una parola forte, che sembra nominare l’essenza stessa di questo luogo,  
 e credo che Martin e Valérie l’abbiano respirata ancor prima di leggerla.  
-Così questa prima iniziativa diventa un invito al ritrovo, alla scoperta della bellezza autentica e concreta. Un intreccio di memorie e nuove visioni. 
+Così questa prima iniziativa diventa un invito al ritrovo, alla scoperta della bellezza autentica e concreta. 
 
 Qui, una selezione degli scatti che vuole restituire il succo di questa esperienza preziosa e condivisa.
 -
