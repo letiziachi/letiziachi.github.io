@@ -4,10 +4,16 @@ import ProjectItem from "../../components/ProjectItem.astro";
 import { getCollection } from "astro:content";
 // import HorizontalCard from "@components/HorizontalCard.astro";
 
-export async function getStaticPaths({ paginate }) {
-  const items = await getCollection("photography");
+export function letiziaPhotoOrder(collection)
+{
+  // Reverse alphabetical order
+  return collection.sort((a, b) => b.slug.localeCompare(a.slug))
   // by date
-  // items.sort((a, b) => b.data.updatedDate.valueOf() - a.data.updatedDate.valueOf());
+  // collection.sort((a, b) => b.data.updatedDate.valueOf() - a.data.updatedDate.valueOf());
+}
+
+export async function getStaticPaths({ paginate }) {
+  const items = letiziaPhotoOrder( await getCollection("photography"));
   return paginate(items, { pageSize: 10 });
 }
 const { page } = Astro.props;
@@ -29,7 +35,7 @@ const { page } = Astro.props;
 
   <div class="flex flex-wrap justify-around projects-container">
     {
-      page.data.map((item) => (
+      letiziaPhotoOrder(page.data).map((item) => (
         <>
           <ProjectItem
             title={item.data.title}
