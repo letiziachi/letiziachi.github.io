@@ -187,7 +187,7 @@ function indexReport()
 	for mProj in *.sh ;  do
 		source $mProj
 		echo $(printf '\n%04d' $PROJECT_INDEX) $PROJECT_TITLE
-	done | sort -n
+	done | sort --numeric-sort --reverse
 	popd
 }
 
