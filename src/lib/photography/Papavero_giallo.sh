@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export PROJECT_INDEX=2
+export PROJECT_INDEX=95
 export IMAGES_SOURCE_DIR="Papavero_giallo"
 export PROJECT_TITLE="Papavero giallo. Un fiore che abita i margini"
 export PROJECT_SEO="Olympus visual storytelling nature photography fotografa sicilia monti nebrodi mare spiaggia papavero biodiversita caronia lens zuiko mirrorless OM1 omsystem"
