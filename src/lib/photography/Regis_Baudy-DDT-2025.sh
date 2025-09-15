@@ -60,8 +60,8 @@ Prima di lasciare questa regale dimora, dove — come scritto nel comunicato sta
 un dialogo sottile con il mondo vegetale.  
   
 Sapevo che lo avrei incontrato e mi sono resa disponibile ad accompagnarlo nella raccolta di erbe e fiori spontanei edibili. Ho preparato una lista  
-di ciò che cresce libero nella campagna che abito, riconoscendo in questa occasione un modo gentile di restituire dignità a ciò che viene considerato inutile,  
-ma che in realtà si chiama biodiversità.  
+di ciò che cresce libero nella campagna che abito, riconoscendo in questa occasione un modo gentile di restituire dignità a ciò che spesso  
+viene considerato invasivo, ma che in realtà porta il nome di biodiversità.  
   
 L’ho incontrato un pomeriggio nella dimora. Tutto si è mosso con armonia: gli artisti si sono mescolati nelle stanze come figure rapide e concentrate,  
 mentre l’allestimento prendeva lentamente forma. Régis mi aspettava nel palmento. Ci siamo presentati sorridendo mentre La luce del tramonto,  
