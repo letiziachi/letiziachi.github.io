@@ -79,9 +79,9 @@ su supporti in ceramica raku concepiti su misura dall'artista Sebastiano Leta. D
 unione di alchimia del gusto e mirabile arte. Ogni preparazione era una micro-scultura. Sacralizzando l’istante della degustazione, il gesto culinario  
 invitava il pubblico a reinventare il proprio legame con il territorio e con le sue risorse.
   
-Opening 16-17 Agosto 2025
-Prima di lasciare questa regale dimora
-Contrada Romei, Mistretta (ME)
+Opening 16-17 Agosto 2025  
+Prima di lasciare questa regale dimora  
+Contrada Romei, Mistretta (ME)  
 ENDTEXT
 }
 
