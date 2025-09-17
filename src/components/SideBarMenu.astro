@@ -34,8 +34,8 @@ import { getLocaleByPath, getRelativeLocaleUrl } from "astro:i18n";
 <ul class="menu menu-md overflow-y-auto">
   { locale === 'it' &&
     <li><a id="home" href="/" class="!hidden" data-astro-reload>Home</a></li>
-    <li><a id="communication" href={getRelativeLocaleUrl(locale, "communication")} data-astro-reload>Comunicazione</a></li>
-    <li><a id="photography" href={getRelativeLocaleUrl(locale, "photography")} data-astro-reload>Fotografia</a></li>
+    <li><a id="communication" href={getRelativeLocaleUrl(locale, "communication/page/1")} data-astro-reload>Comunicazione</a></li>
+    <li><a id="photography" href={getRelativeLocaleUrl(locale, "photography/page/1")} data-astro-reload>Fotografia</a></li>
     <li><a id="bio" href={getRelativeLocaleUrl(locale, "bio")} data-astro-reload>Bio</a></li>
     <!--<li><a id="info" href={getRelativeLocaleUrl(locale, "info")}>Info</a></li>-->
     <li><a id="contact" href={getRelativeLocaleUrl(locale, "contact")}>Contatti</a></li> 
