@@ -7,6 +7,7 @@ images: ["../../images/communication/0060-Freddi___Identit___visiva/0001-Freddi_
 badge: ""
 customCssClass: ""
 displayPriority: 0
+projectId: 60
 ---
 
 Come far risplendere il fascino della Cipollina Borettana dell’Emilia e dello  

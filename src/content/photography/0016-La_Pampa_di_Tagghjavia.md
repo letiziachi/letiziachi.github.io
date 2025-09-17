@@ -7,6 +7,7 @@ images: ["../../images/photography/0016-La_Pampa_di_Tagghjavia/0001-La_Pampa_di_
 badge: ""
 customCssClass: ""
 displayPriority: 0
+projectId: 16
 ---
 
 Ci troviamo sull'ultima valle a ovest dei Monti Nebrodi, da qui possiamo specchiarci con le Madonie.  

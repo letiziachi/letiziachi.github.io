@@ -18,6 +18,7 @@ customImageFormat: "png"
 badge: ""
 customCssClass: ""
 displayPriority: 0
+projectId: 20
 ---
 
 Un Festival internazionale di teatro di figura rivolto a tutte le età  

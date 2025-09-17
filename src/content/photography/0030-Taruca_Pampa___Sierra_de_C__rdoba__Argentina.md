@@ -7,6 +7,7 @@ images: ["../../images/photography/0030-Taruca_Pampa___Sierra_de_C__rdoba__Argen
 badge: ""
 customCssClass: ""
 displayPriority: 0
+projectId: 30
 ---
 
 

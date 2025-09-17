@@ -7,6 +7,7 @@ images: ["../../images/photography/0050-Licheni__peculiare_bellezza/0001-Licheni
 badge: ""
 customCssClass: ""
 displayPriority: 0
+projectId: 50
 ---
 
 Licheni, forma perfetta di simbiosi tra funghi e alghe.  

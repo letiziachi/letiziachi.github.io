@@ -11,7 +11,8 @@ const projectSchema = ({ image }) => z.object({
     coverImage: image(),
     customCssClass: z.string().optional(),
     customImageFormat: z.string().optional(),
-    displayPriority: z.number()
+    displayPriority: z.number(),
+    projectId: z.number()
 });
 
 export type projectSchema = z.infer<typeof projectSchema>;

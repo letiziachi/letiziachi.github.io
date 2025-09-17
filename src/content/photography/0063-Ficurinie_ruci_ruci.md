@@ -7,6 +7,7 @@ images: ["../../images/photography/0063-Ficurinie_ruci_ruci/0001-Ficurinie_ruci_
 badge: ""
 customCssClass: ""
 displayPriority: 0
+projectId: 63
 ---
 
 In Sicilia, in un pezzo di terra chiamato Canalicchio, ogni anno raccogliamo dei frutti di valore.

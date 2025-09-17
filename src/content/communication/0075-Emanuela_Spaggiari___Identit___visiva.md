@@ -7,6 +7,7 @@ images: ["../../images/communication/0075-Emanuela_Spaggiari___Identit___visiva/
 badge: ""
 customCssClass: ""
 displayPriority: 0
+projectId: 75
 ---
 
 Letizia Chianello ha creato un logo elegante per Emanuela Spaggiari, consulente  
