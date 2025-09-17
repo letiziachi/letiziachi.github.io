@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export PROJECT_INDEX=50
+export PROJECT_ID=50
 export IMAGES_SOURCE_DIR="/media/letizia/ADB6-6E82/2023-SICILIA/2023-04-12-Tribbu_Faggeta_radura_alberi_con_Licheni/Selezione_licheni/"
 export PROJECT_TITLE="Licheni, peculiare bellezza"
 export PROJECT_SEO="Licheni simbiosi alghe funghi bosco collaborazione Monti Nebrodi Sicilia acero forme natura 60mm olympus Olympus"

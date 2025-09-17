@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export PROJECT_INDEX=63
+export PROJECT_ID=63
 export IMAGES_SOURCE_DIR="/media/letizia/ADB6-6E82/2023-SICILIA/2023-10-06-Tribbu_Canalicchio_raccolta_fichidindia_bagno_gebbia_olive_verdi/Ficurinie_ruci_ruci/"
 export PROJECT_TITLE="Ficurinie ruci ruci"
 export PROJECT_SEO="Sicilia fichidindia higo chumbo prickly pear cactus olive ulivi Monti Nebrodi bambini educazione natura ricordi tradizioni tinycottons Olympus OM1"

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export PROJECT_INDEX=30
+export PROJECT_ID=30
 export IMAGES_SOURCE_DIR="/home/letizia/01-PROGETTI-FOTOGRAFIA/Tarucapampa/"
 export PROJECT_TITLE="Taruca Pampa | Sierra de Córdoba, Argentina"
 export PROJECT_SEO="Traslasierra Cordoba Argentina Taruca Pampa Escursione cascate familia Leyria oro sierra natura granito olympus"

@@ -6,8 +6,8 @@ import { getCollection } from "astro:content";
 
 export function letiziaCommunicationOrder(collection)
 {
-  // Reverse alphabetical order
-  return collection.sort((a, b) => b.slug.localeCompare(a.slug))
+  // Sort by display priority
+  return collection.sort((a, b) => b.data.displayPriority - a.data.displayPriority)
   // by date
   // collection.sort((a, b) => b.data.updatedDate.valueOf() - a.data.updatedDate.valueOf());
 }

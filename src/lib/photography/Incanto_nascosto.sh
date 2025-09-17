@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export PROJECT_INDEX=90
+export PROJECT_ID=90
 export IMAGES_SOURCE_DIR="/home/letizia/01-PROGETTI-FOTOGRAFIA/Incanto_nascosto-Funghi/"
 export PROJECT_TITLE="Incanto nascosto"
 export PROJECT_SEO="Funghi bosco Sicilia Monti Nebrodi natura scoperta micelio sottobosco Olympus OM1 60MM 12-40MM"

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export PROJECT_INDEX=75
+export PROJECT_ID=75
 export IMAGES_SOURCE_DIR="/media/letizia/SEAGATE_BASIC_5TB/Progetti_grafici_per_sito/Emanuela_Spaggiari/Da_caricare/"
 export PROJECT_TITLE="Emanuela Spaggiari | Identità visiva"
 export PROJECT_CATEGORY="communication"

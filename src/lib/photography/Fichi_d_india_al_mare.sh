@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export PROJECT_INDEX=20
+export PROJECT_ID=20
 export IMAGES_SOURCE_DIR="/media/letizia/ADB6-6E82/2023-SICILIA/2023-08-10-Tribbu_mare_Le_Chiappe_Caronia_raccolta_fichidindia/Selezione/"
 export PROJECT_TITLE="Fichi d'india al mare"
 export PROJECT_SEO="fichi india mare frutta merenda tramonto educazione natura"

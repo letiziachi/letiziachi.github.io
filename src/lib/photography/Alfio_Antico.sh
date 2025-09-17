@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export PROJECT_INDEX=64
+export PROJECT_ID=64
 export IMAGES_SOURCE_DIR="/media/letizia/ADB6-6E82/2023-SICILIA/2023-09-26-Selezione_Alfio_Antico/Selezione_modificate/"
 export PROJECT_TITLE="Alfio Antico, Dio Tamburo"
 export PROJECT_SEO="Alfio Antico Tamburo musica tradizione popolare tammorra tamburello Sicilia Palermo concerto Averna Olympus OM1"

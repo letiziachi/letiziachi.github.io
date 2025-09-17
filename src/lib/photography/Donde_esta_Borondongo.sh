@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export PROJECT_INDEX=55
+export PROJECT_ID=55
 export IMAGES_SOURCE_DIR="/media/letizia/ADB6-6E82/00-LAVORI/Espacio-Abierto/2022-FESTIVAL-TITERES/02-Foto/2023-01-26-Foto-spettacoli-Pan-y-Vino/06-Donde-esta-Borondongo-OK/00-selezione-Donde-esta-Borondongo/"
 export PROJECT_TITLE="Donde está Borondongo - Festival Internacional de Títeres"
 export PROJECT_SEO="festival teatro burattini Argentina Cordoba"

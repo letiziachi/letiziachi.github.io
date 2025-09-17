@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export PROJECT_INDEX=40
+export PROJECT_ID=40
 export IMAGES_SOURCE_DIR="/media/letizia/ADB6-6E82/2023-SICILIA/2023-10-22-Tribbu_mare_Tusa_scogli/Selezione/"
 export PROJECT_TITLE="Effetto mare d'ottobre"
 export PROJECT_SEO="Sicilia scogli schiuma mare Tusa natura mare sole calore gioco ottobre Olympus OM1"

@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export PROJECT_INDEX=10
+export PROJECT_ID=10
 export IMAGES_SOURCE_DIR="/media/letizia/ADB6-6E82/2023-SICILIA/2023-07-09-Mistretta-Arantco-Raccolta_origano/Selezione/"
 export PROJECT_TITLE="OROS GANOS | Splendore della montagna"
 export PROJECT_SEO="origano raccolta montagna tramonto educazione natura Monti Nebrodi Olympus OM1"

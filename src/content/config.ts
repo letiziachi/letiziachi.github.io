@@ -10,7 +10,8 @@ const projectSchema = ({ image }) => z.object({
     images: z.array(image()),
     coverImage: image(),
     customCssClass: z.string().optional(),
-    customImageFormat: z.string().optional()
+    customImageFormat: z.string().optional(),
+    displayPriority: z.number()
 });
 
 export type projectSchema = z.infer<typeof projectSchema>;

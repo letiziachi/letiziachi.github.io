@@ -7,6 +7,7 @@ images: [../../images/photography/0008-Foto_Bosco_Caronia_Funghi/01-PA040293-bam
 customImageFormat: ""
 badge: ""
 customCssClass: ""
+displayPriority: 0
 ---
 
 Che meraviglia poter esplorare un altro pezzetto di bosco, poggiare i piedi su questa terra  

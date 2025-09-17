@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export PROJECT_INDEX=60
+export PROJECT_ID=60
 export IMAGES_SOURCE_DIR="/media/letizia/SEAGATE_BASIC_5TB/Progetti_grafici_per_sito/01-CIpolle_Freddi/Da_caricare/"
 export PROJECT_TITLE="Freddi | Identità visiva"
 export PROJECT_CATEGORY="communication"
