@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export PROJECT_INDEX=8
+export PROJECT_INDEX=80
 export IMAGES_SOURCE_DIR="/home/letizia/01-PROGETTI-FOTOGRAFIA/00_selezione_foto_Parigi/"
 export PROJECT_TITLE="Cartoline da Parigi"
 export PROJECT_SEO="Parigi Moulin Rouge Museo Louvre piramide visitatori portoni Palais Royal scacchiera coppie giostra carosello cafe anges"
