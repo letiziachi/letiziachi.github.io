@@ -19,5 +19,4 @@ export default defineConfig({
       es: "it"
     },
   },
-  output: "hybrid" // Altrimenti non possiamo definire URL catch-all
 });
