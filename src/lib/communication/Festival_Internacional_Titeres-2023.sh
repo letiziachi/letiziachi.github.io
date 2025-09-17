@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export PROJECT_INDEX=20
+export PROJECT_ID=20
 export IMAGES_SOURCE_DIR="Festival_Internacional_Titeres-2023"
 export PROJECT_TITLE="Festival Internacional de Títeres | Edizione 2023"
 export PROJECT_CATEGORY="communication"

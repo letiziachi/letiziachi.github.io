@@ -7,6 +7,7 @@ images: [../../images/photography/Papavero_giallo/Maggio/01-Pianta-Glaucium_flav
 customImageFormat: ""
 badge: ""
 customCssClass: ""
+displayPriority: 0
 ---
 
 L’ho incontrato grazie agli occhi sensibili di Gio.  

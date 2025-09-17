@@ -11,11 +11,25 @@ function define_default_value()
 	[ -z "${!VAR_NAME}" ] && export ${VAR_NAME}="${DEFAULT_VALUE}"
 }
 
-define_default_value PROJECT_INDEX 0
+## Each project must define an unique positive integer ID and stick to that for
+## it's whole lifetime, changing a project ID will result in all sort of
+## unexpected problems, such as broken links.
+define_default_value PROJECT_ID 0
+
+## This will influence sorting orger of projects, higher priority means the
+## project will be presented to the visitors before others project with less
+## priority, if two projects have the same priority which one will be presented
+## before is non-deterministic.
+define_default_value PROJECT_DISPLAY_PRIORITY 0
+
 define_default_value PROJECT_TITLE ""
 define_default_value PROJECT_CATEGORY "photography" # photography | communication
 define_default_value COVER_IMAGE "UNDEFINED COVER IMAGE"
 define_default_value IMAGES_SOURCE_DIR "UNDEFINED IMAGE SOURCE DIR"
+
+## Tell Astro to use specific format for the images of the current project,
+## instead of relying on Astro criteria. As example some drawings may display
+## much better with a lossless compression format such as PNG.
 define_default_value IMAGES_CUSTOM_FORMAT ""
 
 export PROJECT_UTILS_SRC_DIR="$(realpath $(dirname $BASH_SOURCE)/)"
@@ -43,12 +57,16 @@ function projectText()
 
 function sanitizeForFileName()
 {
-	echo -n $@ | tr -c '[:alnum:]' '_'
+	# Print without new line at end
+	# Convert unicode character to ASCII similar è -> e. Requires *GNU* iconv
+	#   see https://stackoverflow.com/a/27052276
+	# Convert all non alfanumerical to _ avoiding _ duplication
+	echo -n $@ | iconv -f utf-8 -t ascii//translit | tr --complement --squeeze-repeats '[:alnum:]' '_'
 }
 
 function projectFileName()
 {
-	echo -n $(printf '%04d' $PROJECT_INDEX)-$(sanitizeForFileName $PROJECT_TITLE)
+	echo -n $(printf '%04d' $PROJECT_ID)-$(sanitizeForFileName $PROJECT_TITLE)
 }
 
 function collectionDir()
@@ -141,12 +159,45 @@ function checkFileNameLenght()
 	return 0
 }
 
+function projectIdValid()
+{
+	# Check projectId is a positive integer
+	[[ $PROJECT_ID == +([0-9]) ]] && [[ $PROJECT_ID -gt 0 ]] && return 0
+
+	echo "PROJECT_ID must be a positive integer got: $PROJECT_ID"
+	return 1
+}
+
+
+function projectIdUnique()
+{
+	pushd "${PROJECT_UTILS_SRC_DIR}/${PROJECT_CATEGORY}"
+	local unsortedIdes="$(
+		for mProj in *.sh ;  do
+			source $mProj
+			echo $PROJECT_ID
+		done
+	)"
+	popd
+
+	local iSorted="$( echo "$unsortedIdes" | sort -n)"
+	local iSortedUnique="$( echo "$unsortedIdes" | sort -n -u)"
+
+	[ "$iSorted" != "$iSortedUnique" ] || return 0
+
+	echo "PROJECT_ID: $PROJECT_ID is duplicated, must be unique."
+	return 1
+}
+
 function projectChecks()
 {
-	checkFileNameLenght "$COVER_IMAGE" || exit $?
+	projectIdValid || return $?
+	projectIdUnique || return $?
+
+	checkFileNameLenght "$COVER_IMAGE" || return $?
 
 	imagesList | while read mLine; do
-		checkFileNameLenght $mLine || exit $?
+		checkFileNameLenght $mLine || return $?
 	done
 }
 
@@ -162,60 +213,44 @@ images: $(imagesPathsList | listToAstroArray)
 customImageFormat: "$IMAGES_CUSTOM_FORMAT"
 badge: ""
 customCssClass: ""
+displayPriority: $PROJECT_DISPLAY_PRIORITY
 ---
 
 $(projectText)
 EOF
 }
 
-function cleanIndex()
+function cleanId()
 {
-	local pIndex="$1"
-	rm -fv "$(projectsMdDir)"/$(printf '%04d' $PROJECT_INDEX)*.md
+	local pId="$1"
+	rm -fv "$(projectsMdDir)"/$(printf '%04d' $PROJECT_ID)*.md
 }
 
 function generateProject()
 {
 	projectChecks || exit $?
-	cleanIndex
+	cleanId
 	updateProjectFile
 }
 
-function indexReport()
+function idReport()
 {
 	pushd "${PROJECT_UTILS_SRC_DIR}/${PROJECT_CATEGORY}"
 	for mProj in *.sh ;  do
 		source $mProj
-		echo $(printf '\n%04d' $PROJECT_INDEX) $PROJECT_TITLE
+		echo $(printf '\n%04d' $PROJECT_ID) $PROJECT_TITLE $mProj
 	done | sort --numeric-sort --reverse
 	popd
 }
 
-function usedIndexes()
+function usedIds()
 {
 	pushd ${PROJECT_CATEGORY}
 	for mProj in "${PROJECT_UTILS_SRC_DIR}/${PROJECT_CATEGORY}"/*.sh ;  do
 		source $mProj
-		echo $(printf '\n%04d' $PROJECT_INDEX)
+		echo $(printf '\n%04d' $PROJECT_ID)
 	done | sort -n -u
 	popd
-}
-
-function haveDuplicatedIndexes()
-{
-	pushd "${PROJECT_UTILS_SRC_DIR}/${PROJECT_CATEGORY}"
-	local unsortedIndexes="$(
-		for mProj in *.sh ;  do
-			source $mProj
-			echo $PROJECT_INDEX
-		done
-	)"
-	popd
-
-	local iSorted="$( echo "$unsortedIndexes" | sort -n)"
-	local iSortedUnique="$( echo "$unsortedIndexes" | sort -n -u)"
-
-	[ "$iSorted" != "$iSortedUnique" ] || false
 }
 
 function updateAllProjects()
@@ -224,5 +259,15 @@ function updateAllProjects()
 	for mProj in *.sh ;  do
 		./$mProj
 	done
+	popd
+}
+
+function priorityReport()
+{
+	pushd "${PROJECT_UTILS_SRC_DIR}/${PROJECT_CATEGORY}"
+	for mProj in *.sh ;  do
+		source $mProj
+		echo $(printf '\n%04d' $PROJECT_DISPLAY_PRIORITY) $PROJECT_TITLE $mProj
+	done | sort --numeric-sort --reverse
 	popd
 }

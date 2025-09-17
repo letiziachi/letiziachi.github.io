@@ -1,6 +1,7 @@
 #!/bin/bash
 
-export PROJECT_INDEX=115
+export PROJECT_ID=115
+export PROJECT_DISPLAY_PRIORITY=115
 export IMAGES_SOURCE_DIR="Regis_Baudy-DDT-2025"
 export PROJECT_TITLE="Régis Baudy. Lo chef artista e la sua poetica del vegetale."
 export PROJECT_SEO="Olympus visual storytelling photography fotografa sicilia monti nebrodi lens zuiko mirrorless OM1 omsystem mostra vernissage exhibition ddt project Régis Baudy chef beauclair atelier sustainable culinary finocchietto foraging biodiversita Martin Dècleve case natoli villa nobiliare romei"

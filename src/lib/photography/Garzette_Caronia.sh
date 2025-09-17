@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export PROJECT_INDEX=13
+export PROJECT_ID=13
 export IMAGES_SOURCE_DIR="Garzette_Caronia"
 export PROJECT_TITLE="Egretta garzetta sugli scogli di Caronia"
 export PROJECT_SEO="Sicilia mediterraneo Caronia Messina mare scogli bassa marea isole eolie ardea garzetta egretta garzetta airone minore bianco nature photography fotografa lens zuiko mirrorless OM1 omsystem"

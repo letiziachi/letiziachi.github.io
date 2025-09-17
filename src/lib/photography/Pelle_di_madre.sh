@@ -1,7 +1,7 @@
 #!/bin/bash
 
 
-export PROJECT_INDEX=61
+export PROJECT_ID=61
 export IMAGES_SOURCE_DIR="/home/letizia/01-PROGETTI-FOTOGRAFIA/Pelle_di_madre/Selezione/"
 export PROJECT_TITLE="Il profondo è la pelle"
 export PROJECT_SEO="Corpo donna maternita cambiamento mutamento roccia pietra mare acqua schizzi intimo vulva nascita sessualita Olympus OM1"

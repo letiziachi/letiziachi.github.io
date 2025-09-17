@@ -7,6 +7,7 @@ images: [../../images/photography/Olympus_Magazine_articolo/01-P1280016-Olympus_
 customImageFormat: ""
 badge: ""
 customCssClass: ""
+displayPriority: 0
 ---
 
 Abitare la natura ed essere, con grande entusiasmo,  

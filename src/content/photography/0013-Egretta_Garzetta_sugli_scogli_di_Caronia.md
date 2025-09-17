@@ -7,6 +7,7 @@ images: [../../images/photography/Garzette_Caronia/0001-Sicilia-Caronia-mare-sco
 customImageFormat: ""
 badge: ""
 customCssClass: ""
+displayPriority: 0
 ---
 
 <i>La costa di Caronia - con i suoi scogli antichi, le onde salmastre, il respiro aperto.  
