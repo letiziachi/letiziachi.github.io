@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export PROJECT_INDEX=100
+export PROJECT_INDEX=1
 export IMAGES_SOURCE_DIR="Mostra_DDT-2025"
 export PROJECT_TITLE="Prima di lasciare questa regale dimora"
 export PROJECT_SEO="Olympus visual storytelling photography fotografa sicilia monti nebrodi lens zuiko mirrorless OM1 omsystem mostra vernissage exhibition ddt project Régis Baudy Sébastien Bonin Alessandro Costanzo Étienne Courtois Martin Dècleve Myriam El Haïk Laurent Friob Anna Guillot Sebastiano Leta Renee Marcus Janssen Emmanuel Piron Rawakari Agostino Rocco Alfredo Sciuto case natoli villa nobiliare romei"

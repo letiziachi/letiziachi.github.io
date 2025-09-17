@@ -1,6 +1,6 @@
 #!/bin/bash
 
-export PROJECT_INDEX=93
+export PROJECT_INDEX=5
 export IMAGES_SOURCE_DIR="Olympus_Magazine_articolo"
 export PROJECT_TITLE="Dwelling in Nature with Olympus"
 export PROJECT_SEO="Olympus Passion magazine visual storytelling biography nature photography children fotografa sicilia monti nebrodi mare bambini lens zuiko mirrorless OM1 omsystem"
