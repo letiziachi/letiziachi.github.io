@@ -9,4 +9,28 @@ import BaseLayout from "../layouts/BaseLayout.astro";
     <h3 class="text-2xl">Ops! Non trovo la pagina che stai cercando!</h3>
     <a class="btn btn-accent mt-9" href="/">Torna alla homepage</a>
   </div>
+
+
+  <script type="module">
+  // If we get to 404 from a an url like
+  // /photography/0115-wrong_title or /communication/0115-wrong_title
+  // It may be the case that the page title and hence the slug has changed after
+  // publication, if that is the case the project id must have remained the same
+  // so we attempt to redirect it to the short url in the format
+  // /photography/0115 or /communication/0115
+  // for better user experience
+  // this implementation mey be less friendly to SEO but is good for the user
+  // and works with completely static deploy
+  // (no need of output: "hybrid" or worse)
+
+  const pathname = window.location.pathname;
+
+  const match = pathname.match(/^\/(photography|communication)\/(\d+)-[^\/]+\/?$/);
+  if (match)
+  {
+    const section = match[1];
+    const numericId = parseInt(match[2]);
+    window.location.replace(`/${section}/${numericId}`);
+  }
+  </script>
 </BaseLayout>

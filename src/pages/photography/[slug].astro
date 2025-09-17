@@ -3,33 +3,39 @@ import { type CollectionEntry, getCollection } from "astro:content";
 import type { projectSchema } from "../../content/config";
 import ProjectItemLayout from "../../layouts/ProjectItemLayout.astro";
 
-export const prerender = false;
+export async function getStaticPaths() {
+  const itemEntries = await getCollection("photography");
 
-// Extract the full slug from the URL
-// Could be "115", "0115", "0115-wrong-title", 00000115-whathever etc.
-const requestSlug = Astro.params.slug;
+  const paths = itemEntries.flatMap((entry) =>
+  {
+    const projectIdStr = entry.data.projectId.toString();
 
-// Extract only the numeric ID at beginning of the URL
-const requestedId = parseInt(requestSlug.split(/[-_]/)[0], 10);
-if(Number.isNaN(requestedId))
-{
-  return new Response(null, { status: 404 });
+    // Register 3 routes for each project:
+    // 1. Full slug: "0115-my_project_title"
+    //    this is SEO and user friendly but changes if the title changes and
+    //    previously shared the link would break without the other options and
+    //    the little trick in 404.astro
+    // 2. Raw numeric ID: "115"
+    // 3. Padded numeric ID: "0115"
+    //    This two remains constant even if the title changes and provide quite
+    //    short urls, user firendly and necessary for the 404.astro redirect
+    //    trick to work.
+    // All routes resolve to the same content.
+    return [
+      { params: { slug: entry.slug }, props: { entry } },
+      { params: { slug: projectIdStr }, props: { entry } },
+      { params: { slug: projectIdStr.padStart(4, "0") }, props: { entry } }
+    ];
+  });
+
+  return paths;
 }
 
-const entries = await getCollection("photography");
-const entry = entries.find((entry) => entry.data.projectId === requestedId);
-if (!entry)
-{
-  return new Response(null, { status: 404 })
+interface Props {
+  entry: CollectionEntry<"photography">;
 }
 
-if (requestSlug !== entry.slug)
-{
-  // If ID matches a project but the title is incorrect redirect to the
-  // correct URL
-  return Astro.redirect(`/photography/${entry.slug}`, 301);
-}
-
+const { entry } = Astro.props;
 const item: projectSchema = entry.data;
 const { Content } = await entry.render();
 ---
