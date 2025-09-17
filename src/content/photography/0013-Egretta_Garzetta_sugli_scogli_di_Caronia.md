@@ -8,6 +8,7 @@ customImageFormat: ""
 badge: ""
 customCssClass: ""
 displayPriority: 0
+projectId: 13
 ---
 
 <i>La costa di Caronia - con i suoi scogli antichi, le onde salmastre, il respiro aperto.  

@@ -3,19 +3,33 @@ import { type CollectionEntry, getCollection } from "astro:content";
 import type { projectSchema } from "../../content/config";
 import ProjectItemLayout from "../../layouts/ProjectItemLayout.astro";
 
-export async function getStaticPaths() {
-  const itemEntries = await getCollection("photography");
-  return itemEntries.map((entry) => ({
-    params: { slug: entry.slug },
-    props: { entry },
-  }));
+export const prerender = false;
+
+// Extract the full slug from the URL
+// Could be "115", "0115", "0115-wrong-title", 00000115-whathever etc.
+const requestSlug = Astro.params.slug;
+
+// Extract only the numeric ID at beginning of the URL
+const requestedId = parseInt(requestSlug.split(/[-_]/)[0], 10);
+if(Number.isNaN(requestedId))
+{
+  return new Response(null, { status: 404 });
 }
 
-interface Props {
-  entry: CollectionEntry<"photography">;
+const entries = await getCollection("photography");
+const entry = entries.find((entry) => entry.data.projectId === requestedId);
+if (!entry)
+{
+  return new Response(null, { status: 404 })
 }
 
-const { entry } = Astro.props;
+if (requestSlug !== entry.slug)
+{
+  // If ID matches a project but the title is incorrect redirect to the
+  // correct URL
+  return Astro.redirect(`/photography/${entry.slug}`, 301);
+}
+
 const item: projectSchema = entry.data;
 const { Content } = await entry.render();
 ---

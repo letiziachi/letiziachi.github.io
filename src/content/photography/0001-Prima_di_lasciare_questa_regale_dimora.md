@@ -8,6 +8,7 @@ customImageFormat: ""
 badge: ""
 customCssClass: ""
 displayPriority: 100
+projectId: 1
 ---
 
 Una mattina che comincia tra i rovi. Con Gio decidiamo di raccogliere le prime more,  

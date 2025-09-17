@@ -214,6 +214,7 @@ customImageFormat: "$IMAGES_CUSTOM_FORMAT"
 badge: ""
 customCssClass: ""
 displayPriority: $PROJECT_DISPLAY_PRIORITY
+projectId: $PROJECT_ID
 ---
 
 $(projectText)

@@ -7,6 +7,7 @@ images: ["../../images/photography/0010-OROS_GANOS___Splendore_della_montagna/00
 badge: ""
 customCssClass: ""
 displayPriority: 0
+projectId: 10
 ---
 
 In Sicilia, in un fazzoletto dei Monti Nebrodi una volta si raccoglieva l'origano.  

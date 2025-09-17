@@ -1,12 +1,13 @@
 ---
-import BaseLayout from "../../layouts/BaseLayout.astro";
-import ProjectItem from "../../components/ProjectItem.astro";
+import BaseLayout from "../../../layouts/BaseLayout.astro";
+import ProjectItem from "../../../components/ProjectItem.astro";
 import { getCollection } from "astro:content";
 // import HorizontalCard from "@components/HorizontalCard.astro";
 
-export function letiziaPhotoOrder(collection)
+export const prerender = true;
+
+export function letiziaCommunicationOrder(collection)
 {
-  console.log("letiziaPhotoOrder: ", collection)
   // Sort by display priority
   return collection.sort((a, b) => b.data.displayPriority - a.data.displayPriority)
   // by date
@@ -14,13 +15,15 @@ export function letiziaPhotoOrder(collection)
 }
 
 export async function getStaticPaths({ paginate }) {
-  const items = letiziaPhotoOrder( await getCollection("photography"));
+  const items = letiziaCommunicationOrder(await getCollection("communication"));
+  // by date
+  // items.sort((a, b) => b.data.updatedDate.valueOf() - a.data.updatedDate.valueOf());
   return paginate(items, { pageSize: 10 });
 }
 const { page } = Astro.props;
 ---
 
-<BaseLayout title="Fotografia" sideBarActiveItemID="photography">
+<BaseLayout title="Comunicazione" sideBarActiveItemID="communication">
 
   <!-- <div>
     <div class="text-3xl w-full font-bold mb-5 mt-10">Projects Header</div>
@@ -36,7 +39,7 @@ const { page } = Astro.props;
 
   <div class="flex flex-wrap justify-around projects-container">
     {
-      letiziaPhotoOrder(page.data).map((item) => (
+      letiziaCommunicationOrder(page.data).map((item) => (
         <>
           <ProjectItem
             title={item.data.title}
@@ -46,7 +49,7 @@ const { page } = Astro.props;
             badge={item.data.badge}
             details={item.data.details}
             tags={item.data.tags}
-            url={"/photography/" + item.slug}
+            url={"/communication/" + item.slug}
             customCssClass={item.data.customCssClass}
             customImageFormat={item.data.customImageFormat}
           />

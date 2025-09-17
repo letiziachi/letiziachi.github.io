@@ -7,6 +7,7 @@ images: ["../../images/photography/0064-Alfio_Antico__Dio_Tamburo/0001-Alfio_Ant
 badge: ""
 customCssClass: ""
 displayPriority: 0
+projectId: 64
 ---
 
 Il maestro assoluto all'Averna Spazio Open, Palermo

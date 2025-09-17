@@ -7,6 +7,7 @@ images: ["../../images/photography/0070-Festival_Internacional_de_T__teres_PAN_Y
 badge: ""
 customCssClass: ""
 displayPriority: 0
+projectId: 70
 ---
 
 Un Festival internazionale di teatro di figura rivolto a tutte le età
