@@ -16,7 +16,7 @@ in armonia resistono festosi di fronte al mare. Arrivo a Levanzo: l’acqua è c
 seguono la curva della costa, una accanto all’altra con le loro imposte azzurre. Il mio sguardo si apre  
 in una finestra di palme e da lì inizio a cercare la vegetazione che cresce spontanea nel paese.  
 Le vie lastricate in pietra e le scalinate mi invitano a salire nel gioco di un nascondino tra le case leggere  
-ed estetiche. Alla ricerca di flora e fauna, mentre scatto in piena armonia, lascio che ogni incontro  
+ed estetiche. Alla ricerca di flora e fauna, mentre scatto, lascio che ogni incontro  
 con la bellezza crei nuova memoria.
 
 Il mare che costeggio cambia dall’azzurro al verde, e i gabbiani hanno deciso di riposarsi insieme,  
