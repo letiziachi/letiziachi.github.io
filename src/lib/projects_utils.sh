@@ -159,6 +159,25 @@ function checkFileNameLenght()
 	return 0
 }
 
+function checkMaxFileSize()
+{
+	# Cloudflare Pages free plan doesn't accept files bigger then 25MB
+	# Fail early to not waste time and aveid later wrangler reporting
+	# Error: Pages only supports files up to 25 MiB in size
+	local CLOUDFLARE_PAGES_MAX_FILE_SIZE=$((25*1024*1024))
+	local mFile="$1"
+
+	local mFileSize=$(wc -c < "$file") || return $?
+	[ "0$mFileSize" -gt "$CLOUDFLARE_PAGES_MAX_FILE_SIZE" ] &&
+	{
+		echo "File troppo grande $mFileSize > $CLOUDFLARE_PAGES_MAX_FILE_SIZE (25MB):"
+		echo "$mFile"
+		return 27 # EFBIG
+	}
+
+	return 0
+}
+
 function projectIdValid()
 {
 	# Check projectId is a positive integer
@@ -186,7 +205,7 @@ function projectIdUnique()
 	[ "$iSorted" != "$iSortedUnique" ] || return 0
 
 	echo "PROJECT_ID: $PROJECT_ID is duplicated, must be unique."
-	return 1
+	return 99 # EADDRNOTAVAIL
 }
 
 function projectChecks()
@@ -195,9 +214,11 @@ function projectChecks()
 	projectIdUnique || return $?
 
 	checkFileNameLenght "$COVER_IMAGE" || return $?
+	checkMaxFileSize "$COVER_IMAGE" || return $?
 
 	imagesList | while read mLine; do
 		checkFileNameLenght $mLine || return $?
+		checkMaxFileSize $mLine || return $?
 	done
 }
 
