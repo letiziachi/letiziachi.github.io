@@ -23,7 +23,8 @@
     "dayjs": "^1.11.9",
     "scrollreveal": "^4.0.9",
     "sharp": "^0.33.3",
-    "tailwindcss": "^3.3.5"
+    "tailwindcss": "^3.3.5",
+    "wrangler": "^4.53.0"
   },
   "devDependencies": {
     "@tailwindcss/typography": "^0.5.10"
