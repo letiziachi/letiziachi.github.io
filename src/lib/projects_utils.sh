@@ -35,26 +35,6 @@ define_default_value IMAGES_CUSTOM_FORMAT ""
 export PROJECT_UTILS_SRC_DIR="$(realpath $(dirname $BASH_SOURCE)/)"
 export PROJECT_UTILS_IMAGES_LIST_OUTPUT=()
 
-function projectsMdDir()
-{
-	realpath "${PROJECT_UTILS_SRC_DIR}/../content/${PROJECT_CATEGORY}/"
-}
-
-function projectsImagesDir()
-{
-	realpath "${PROJECT_UTILS_SRC_DIR}/../images/${PROJECT_CATEGORY}/"
-}
-
-function imagesList()
-{
-	echo "Your project miss implementation for imagesList"
-}
-
-function projectText()
-{
-	echo "Il testo lungo va qui"
-}
-
 function sanitizeForFileName()
 {
 	# Print without new line at end
@@ -69,9 +49,24 @@ function projectFileName()
 	echo -n $(printf '%04d' $PROJECT_ID)-$(sanitizeForFileName $PROJECT_TITLE)
 }
 
-function collectionDir()
+function projectMdFilePath()
 {
-	echo "$(projectsImagesDir)/$(projectFileName)/"
+	realpath "${PROJECT_UTILS_SRC_DIR}/../content/${PROJECT_CATEGORY}/$(projectFileName).md"
+}
+
+function projectImagesDir()
+{
+	realpath "${PROJECT_UTILS_SRC_DIR}/../images/${PROJECT_CATEGORY}/${IMAGES_SOURCE_DIR}/"
+}
+
+function imagesList()
+{
+	echo "Your project miss implementation for imagesList"
+}
+
+function projectText()
+{
+	echo "Il testo lungo va qui"
 }
 
 function compressImage()
@@ -167,7 +162,11 @@ function checkMaxFileSize()
 	local CLOUDFLARE_PAGES_MAX_FILE_SIZE=$((25*1024*1024))
 	local mFile="$1"
 
-	local mFileSize=$(wc -c < "$file") || return $?
+	# In bash, when you write local var=..., the exit status is from local, not
+	# from the command substitution. local almost always returns 0
+	local mFileSize
+	# Use redirection to prevent wc from printing the file name
+	mFileSize=$(wc -c < "$mFile") || return $?
 	[ "0$mFileSize" -gt "$CLOUDFLARE_PAGES_MAX_FILE_SIZE" ] &&
 	{
 		echo "File troppo grande $mFileSize > $CLOUDFLARE_PAGES_MAX_FILE_SIZE (25MB):"
@@ -214,17 +213,17 @@ function projectChecks()
 	projectIdUnique || return $?
 
 	checkFileNameLenght "$COVER_IMAGE" || return $?
-	checkMaxFileSize "$COVER_IMAGE" || return $?
+	checkMaxFileSize "$(projectImagesDir)/$COVER_IMAGE" || return $?
 
 	imagesList | while read mLine; do
-		checkFileNameLenght $mLine || return $?
-		checkMaxFileSize $mLine || return $?
+		checkFileNameLenght "$mLine" || return $?
+		checkMaxFileSize "$(projectImagesDir)/$mLine" || return $?
 	done
 }
 
 function updateProjectFile()
 {
-	cat << EOF > "$(projectsMdDir)/$(projectFileName).md"
+	cat << EOF > "$(projectMdFilePath)"
 ---
 title: "$PROJECT_TITLE"
 description: ""
@@ -245,7 +244,7 @@ EOF
 function cleanId()
 {
 	local pId="$1"
-	rm -fv "$(projectsMdDir)"/$(printf '%04d' $PROJECT_ID)*.md
+	rm -fv "$(projectMdFilePath)"
 }
 
 function generateProject()
