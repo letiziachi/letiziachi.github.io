@@ -31,7 +31,7 @@ function imagesList()
 17-isole_egadi-levanzo-endemismi-flora-fauna.jpg
 18-isole_egadi-levanzo-endemismi-flora-fauna-scogliera-gabbiani.jpg
 19-isole_egadi-levanzo-endemismi-flora-fauna-scoglio-gabbiano.jpg
-20-isole_egadi-levanzo-endemismi-flora-fiori-cisto.jpg
+20-isole_egadi-levanzo-endemismi-flora-pianta-fiori-periploca_angustifolia.jpg
 21-isole_egadi-levanzo-endemismi-flora-fauna-agave-roccia.jpg
 22-isole_egadi-levanzo-endemismi-flora-fauna-roccia-corvo.jpg
 23-isole_egadi-levanzo-endemismi-flora-fauna-scogliera-panorama-mare.jpg
@@ -64,11 +64,12 @@ seguono la curva della costa, una accanto all’altra con le loro imposte azzurr
 in una finestra di palme e da lì inizio a cercare la vegetazione che cresce spontanea nel paese.  
 Le vie lastricate in pietra e le scalinate mi invitano a salire nel gioco di un nascondino tra le case leggere  
 ed estetiche. Alla ricerca di flora e fauna, mentre scatto, lascio che ogni incontro  
-con la bellezza crei nuova memoria.
+con la bellezza crei nuova memoria. 
 
-Il mare che costeggio cambia dall’azzurro al verde, e i gabbiani hanno deciso di riposarsi insieme,  
-allineati come pensieri quieti. Salendo verso la montagna una lucertola si scalda immobile e si lascia fotografare  
-con gentilezza; dello stesso verde vivo le foglie appariscenti del peculiare Arum italicum.  
+Il mare che costeggio cambia dall’azzurro al verde smeraldo, e i gabbiani hanno deciso di riposarsi insieme,  
+allineati come pensieri leggeri. Salendo verso la montagna una lucertola si scalda immobile e si lascia fotografare  
+con gentilezza; dello stesso verde vivo le foglie appariscenti del peculiare Arum italicum e la cespugliosa  
+periploca angustifolia con i suoi stellari fiori purpurei.  
 Poco più avanti, un ragno tesse la sua tela elegante: è un invito a fermarmi e a muovere lo sguardo al suo ritmo sottile.  
 
 Dalla pineta al mare, dal mare alle rocce bianchissime, luogo prediletto del crithmum maritimum,  
